@@ -104,7 +104,7 @@ export default function ContactsPage() {
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">Мы на карте</h2>
                 <div className="aspect-video bg-gray-200 rounded-2xl flex items-center justify-center mb-4">
                   <iframe 
-                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e8b4c4f8b8b4f8b8b4f8b8b4f8b8b4&amp;source=constructor"
+                    src="https://yandex.ru/maps/11235/altai-krai/house/sovetskaya_ulitsa_50/bEwYfgZkSEYAQFtrfXV1dHxkYg==/?ll=85.815381%2C51.944491&z=16.6"
                     width="100%" 
                     height="100%" 
                     frameBorder="0"
