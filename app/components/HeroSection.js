@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { Calendar, Phone, MapPin, Home, Waves, Flame } from 'lucide-react';
+import Image from 'next/image';
 
 export default function HeroSection() {
   return (
@@ -17,7 +18,7 @@ export default function HeroSection() {
         >
           <source src="/image/hero-video.mp4" type="video/mp4" />
           {/* Fallback image if video doesn't load */}
-          <img src="/image/hero-bg.jpg" alt="Луна №50" className="w-full h-full object-cover" />
+          <Image src="/image/hero-bg.jpg" alt="Луна №50" fill className="object-cover" />
         </video>
         {/* Overlay */}
         <div className="absolute inset-0 bg-black/30"></div>

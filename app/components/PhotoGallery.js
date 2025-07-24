@@ -8,50 +8,42 @@ const galleryImages = [
   {
     id: 1,
     src: '/image/gallery-1.jpg',
-    alt: 'Гостевой дом из кедра',
-    title: 'Гостевой дом'
+    
   },
   {
     id: 2,
     src: '/image/gallery-2.jpg',
-    alt: 'Бассейн с подогревом',
-    title: 'Бассейн'
+  
   },
   {
     id: 3,
     src: '/image/gallery-3.jpg',
-    alt: 'Русская баня',
-    title: 'Русская баня'
+   
   },
   {
     id: 4,
     src: '/image/gallery-4.jpg',
-    alt: 'Горная река Катунь',
-    title: 'Река Катунь'
+   
   },
   {
     id: 5,
     src: '/image/gallery-5.jpg',
-    alt: 'Терраса с видом на горы',
-    title: 'Терраса'
+   
   },
   {
     id: 6,
     src: '/image/gallery-6.jpg',
-    alt: 'Семейный люкс',
-    title: 'Семейный люкс'
+   
   },
   {
     id: 7,
     src: '/image/gallery-7.jpg',
-    alt: 'Горный пейзаж',
-    title: 'Горы Алтая'
+   
   },
   {
     id: 8,
     src: '/image/gallery-8.jpg',
-    alt: 'Отдых на природе',
-    title: 'Отдых на природе'
+   
   }
 ];
 

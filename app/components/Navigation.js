@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Phone, MapPin, Clock, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const navItems = [
   { href: '/', label: 'Главная' },
@@ -56,13 +57,12 @@ export default function Navigation() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
               <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-3">
-                <img
+                <Image
                   src="/image/logo.png"
-                  alt=" логотип"
-                  className="h-16 w-16 object-contain"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                  }}
+                  alt="логотип"
+                  width={64}
+                  height={64}
+                  className="object-contain"
                 />
                 <div className="text-2xl font-bold bg-gradient-to-r from-sky-500 via-blue-600 to-slate-600 bg-clip-text text-transparent">
                  -
