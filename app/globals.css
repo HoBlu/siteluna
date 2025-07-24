@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Kontora';
+  src: url('/Fonts/Kontora.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Wade';
+  src: url('/Fonts/wade.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 50%, #d1e7dd 100%);
+    min-height: 100vh;
+    font-family: 'Kontora', sans-serif;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(240, 248, 255, 0.3);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(135, 206, 235, 0.2);
+  }
+  
+  .neumorphism {
+    background: #f0f8ff;
+    box-shadow: 8px 8px 16px #b8c6d9, -8px -8px 16px #ffffff;
+  }
+  
+  .neumorphism-inset {
+    background: #f0f8ff;
+    box-shadow: inset 8px 8px 16px #b8c6d9, inset -8px -8px 16px #ffffff;
+  }
+}
+
