@@ -25,8 +25,16 @@ import {
 import Link from 'next/link';
 
 const housePhotos = [
-  "/image/family-suite.jpg",
-  "/image/family-suite-interior.jpg",
+  "/image/family-suite-10jpg.jpg",
+  "/image/family-suite-1jpg.jpg",
+  "/image/family-suite-2jpg.jpg",
+  "/image/family-suite-3jpg.jpg",
+  "/image/family-suite-4jpg.jpg",
+  "/image/family-suite-5jpg.jpg",
+  "/image/family-suite-6jpg.jpg",
+  "/image/family-suite-7jpg.jpg",
+  "/image/family-suite-8jpg.jpg",
+  "/image/family-suite-9jpg.jpg",
 ];
 
 const amenities = [
@@ -63,7 +71,7 @@ export default function FamilySuitePage() {
           transition={{ duration: 1.5 }}
         >
           <img 
-            src="/image/family-suite.jpg" 
+            src="/image/family-suite-10jpg.jpg" 
             alt="Семейный номер" 
             className="w-full h-full object-cover"
           />
@@ -217,7 +225,7 @@ export default function FamilySuitePage() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative h-96 md:h-[500px]">
+            <div className="relative h-96 md:h-[900px]">
               <img 
                 src={housePhotos[currentPhotoIndex]} 
                 alt={`Семейный номер - фото ${currentPhotoIndex + 1}`}
