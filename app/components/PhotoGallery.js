@@ -82,10 +82,10 @@ export default function PhotoGallery() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-amber-700">
               Фотогалерея
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
               Посмотрите, как выглядит наша база отдыха и убедитесь в красоте горной природы Алтая
             </p>
           </motion.div>

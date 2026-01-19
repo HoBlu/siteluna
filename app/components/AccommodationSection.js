@@ -25,7 +25,7 @@ const accommodations = [
       { icon: <Bath className="w-4 h-4" />, text: "Душевая и санузел" },
       { icon: <Wifi className="w-4 h-4" />, text: "Wi-Fi" }
     ],
-    gradient: "from-green-400 to-emerald-600"
+    gradient: "from-amber-200 to-rose-200"
   },
   {
     id: 2,
@@ -44,7 +44,7 @@ const accommodations = [
       { icon: <TreePine className="w-4 h-4" />, text: "Терраса" },
       { icon: <Wifi className="w-4 h-4" />, text: "Wi-Fi" }
     ],
-    gradient: "from-purple-400 to-pink-500"
+    gradient: "from-rose-200 to-amber-200"
   }
 ];
 
@@ -86,7 +86,7 @@ export default function AccommodationSection() {
   };
 
   return (
-    <section className="py-12 sm:py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-12 sm:py-20 px-4 bg-gradient-to-b from-white to-gray-50">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -94,10 +94,10 @@ export default function AccommodationSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 text-amber-700">
             Размещение
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto px-4">
             Выберите идеальный вариант для вашего отдыха
           </p>
         </motion.div>
@@ -297,15 +297,15 @@ export default function AccommodationSection() {
 
           {/* Navigation Pills - moved to bottom */}
           <div className="flex justify-center mt-6">
-            <div className="flex bg-white/80 backdrop-blur-sm rounded-full p-1 shadow-lg">
+            <div className="flex bg-white/50 backdrop-blur-sm rounded-full p-1 shadow-lg">
               {accommodations.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                     index === currentSlide
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-md'
-                      : 'text-gray-600 hover:text-gray-800'
+                      ? 'bg-blue-500 text-white shadow-lg hover:bg-blue-600'
+                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-black'
                   }`}
                 >
                   {index === 0 ? 'Гостевой Дом' : 'Семейный номер'}

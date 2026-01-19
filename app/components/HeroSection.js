@@ -1,12 +1,12 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Calendar, Phone, MapPin, Home, Waves, Flame } from 'lucide-react';
+import { ArrowRight, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative w-full h-screen overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -17,93 +17,127 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
         >
           <source src="/image/hero-video.mp4" type="video/mp4" />
-          {/* Fallback image if video doesn't load */}
           <Image src="/image/hero-bg.jpg" alt="Луна №50" fill className="object-cover" />
         </video>
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/30"></div>
+        {/* Subtle overlay */}
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-white px-4 max-w-7xl mx-auto">
-        <div className="flex items-center min-h-screen">
+      {/* Hero Content - Left Aligned */}
+      <div className="absolute inset-0 flex items-center z-20">
+        <div className="max-w-7xl mx-auto w-full px-4 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 1.2, delay: 0.3 }}
             className="max-w-2xl"
           >
-            <motion.h1 
-              className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8"
-              initial={{ opacity: 0, y: 50 }}
+            
+            
+
+            {/* Main Title - match subtitle tint */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.4 }}
+              transition={{ duration: 1, delay: 0.6 }}
+              className="text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-tight drop-shadow-2xl"
+              style={{
+                color: 'rgba(255,255,255,0.9)',
+                WebkitTextFillColor: 'rgba(255,255,255,0.9)',
+                WebkitBackgroundClip: 'unset',
+                background: 'none',
+              }}
             >
-              <motion.span 
-                className="block bg-gradient-to-r from-sky-300 via-blue-300 to-slate-300 bg-clip-text text-transparent text-center font-wade"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                ЛУНА №50
-              </motion.span>
-              <motion.span 
-                className="block bg-gradient-to-r from-emerald-300 via-sky-300 to-blue-300 bg-clip-text text-transparent mt-2"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-              >
-                БАЗА ОТДЫХА
-              </motion.span>
+              ЛУНА №50
             </motion.h1>
+
+            {/* Subtitle */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.8 }}
+              className="text-2xl lg:text-3xl text-white/90 font-light mb-8 max-w-xl"
+            >
+              Премиум база отдыха
+              <br />
+              в сердце Горного Алтая
+            </motion.p>
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 1 }}
+              className="text-lg text-white/80 mb-12 max-w-lg leading-relaxed"
+            >
+              Откройте для себя идеальное сочетание роскоши и природы. Уютные домики из кедра, теплый бассейн, аутентичная баня и величественные пейзажи реки Катунь.
+            </motion.p>
+
+            {/* Contact Info */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 1.4 }}
+              className="flex flex-col sm:flex-row gap-8 mt-16 pt-8 border-t border-white/30"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="text-white/70 text-sm">Телефон</p>
+                  <p className="text-white font-semibold">+7 (962) 807-50-50</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                  <MapPin className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <p className="text-white/70 text-sm">Адрес</p>
+                  <p className="text-white font-semibold">село Ая, ул. Советская 50</p>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
-
-      {/* Quick Info - Centered */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.2 }}
-        className="absolute bottom-24 left-1/2 transform -translate-x-1/2 z-10 flex flex-wrap justify-center gap-6 sm:gap-8 text-sm text-white/80"
-      >
-        <div className="flex items-center gap-2">
-          <MapPin className="w-4 h-4" />
-          <span>Горный Алтай</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Home className="w-4 h-4" />
-          <span>Уютные домики</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Waves className="w-4 h-4" />
-          <span>Бассейн с подогревом</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <Flame className="w-4 h-4" />
-          <span>Русская баня</span>
-        </div>
-      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        transition={{ duration: 1, delay: 1.8 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center"
+          className="flex flex-col items-center gap-3"
         >
-          <motion.div
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-1 h-3 bg-white/70 rounded-full mt-2"
-          />
+          <span className="text-white/70 text-sm font-semibold tracking-widest">ПРОКРУТИТЬ</span>
+          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center p-1">
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 2, repeat: Infinity }}
+              className="w-1.5 h-2.5 bg-white/70 rounded-full"
+            />
+          </div>
         </motion.div>
       </motion.div>
+
+      {/* Decorative elements */}
+      <motion.div
+        animate={{ y: [0, 20, 0] }}
+        transition={{ duration: 8, repeat: Infinity }}
+        className="absolute top-20 right-10 w-96 h-96 bg-blue-50/5 rounded-full blur-3xl pointer-events-none"
+      />
+      <motion.div
+        animate={{ y: [0, -15, 0] }}
+        transition={{ duration: 10, repeat: Infinity }}
+        className="absolute bottom-20 right-1/4 w-80 h-80 bg-green-50/10 rounded-full blur-3xl pointer-events-none"
+      />
     </section>
   );
 }

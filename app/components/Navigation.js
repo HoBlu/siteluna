@@ -64,7 +64,7 @@ export default function Navigation() {
                   height={64}
                   className="object-contain"
                 />
-                <div className="text-2xl font-bold bg-gradient-to-r from-sky-500 via-blue-600 to-slate-600 bg-clip-text text-transparent">
+                <div className="text-2xl font-bold text-amber-700">
                  -
                 </div>
               </motion.div>
@@ -78,8 +78,8 @@ export default function Navigation() {
                     whileHover={{ scale: 1.05 }}
                     className={`px-3 py-2 rounded-lg transition-all duration-300 ${
                       pathname === item.href
-                        ? 'bg-gradient-to-r from-sky-500/20 to-blue-500/20 text-sky-700 font-medium'
-                        : 'text-slate-700 hover:text-sky-600 hover:bg-white/50'
+                        ? 'bg-gray-100 text-black font-medium'
+                        : 'text-gray-700 hover:text-black hover:bg-gray-50'
                     }`}
                   >
                     {item.label}
@@ -90,8 +90,8 @@ export default function Navigation() {
 
             {/* Desktop Contact Info */}
             <div className="hidden md:flex items-center space-x-4">
-              <div className="flex items-center gap-2 text-sm text-slate-700">
-                <Phone className="w-4 h-4 text-sky-600" />
+              <div className="flex items-center gap-2 text-sm text-gray-700">
+                <Phone className="w-4 h-4 text-gray-600" />
                 <span>+7 (962) 807-50-50</span>
               </div>
             </div>
@@ -120,8 +120,8 @@ export default function Navigation() {
                   whileHover={{ x: 10 }}
                   className={`block px-4 py-3 rounded-lg transition-all duration-300 ${
                     pathname === item.href
-                      ? 'bg-gradient-to-r from-sky-500/20 to-blue-500/20 text-sky-700 font-medium'
-                      : 'text-slate-700 hover:text-sky-600 hover:bg-white/50'
+                      ? 'bg-gray-100 text-black font-medium'
+                      : 'text-gray-700 hover:text-black hover:bg-gray-50'
                   }`}
                 >
                   {item.label}
@@ -133,22 +133,22 @@ export default function Navigation() {
               <div className="grid grid-cols-1 gap-3 mb-4">
                 {/* Time Widget */}
                 <div className="glass p-3 rounded-xl border border-white/20">
-                  <div className="flex items-center gap-2 text-sky-600 mb-1">
+                  <div className="flex items-center gap-2 text-gray-700 mb-1">
                     <Clock className="w-4 h-4" />
                     <span className="text-sm font-semibold">Местное время</span>
                   </div>
-                  <p className="text-slate-800 font-medium text-sm">
+                  <p className="text-black font-medium text-sm">
                     {currentTime || 'Загрузка...'}
                   </p>
                 </div>
 
                 {/* Location Widget */}
                 <div className="glass p-3 rounded-xl border border-white/20">
-                  <div className="flex items-center gap-2 text-emerald-600 mb-1">
+                  <div className="flex items-center gap-2 text-gray-600 mb-1">
                     <MapPin className="w-4 h-4" />
                     <span className="text-sm font-semibold">Расположение</span>
                   </div>
-                  <p className="text-slate-800 font-medium text-sm mb-2">
+                  <p className="text-black font-medium text-sm mb-2">
                     Село Ая, ул. Советская 50
                   </p>
                   <motion.a
@@ -157,7 +157,7 @@ export default function Navigation() {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center gap-2 bg-gradient-to-r from-sky-400 to-blue-500 text-white px-3 py-2 rounded-lg text-xs font-medium"
+                    className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-3 py-2 rounded-lg text-xs font-medium hover:bg-blue-100"
                   >
                     <ExternalLink className="w-3 h-3" />
                     Показать на карте
