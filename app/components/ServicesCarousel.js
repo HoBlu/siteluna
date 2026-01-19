@@ -1,9 +1,9 @@
 'use client';
 
-import { animate, motion, useMotionValue } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Waves, Home, Thermometer, TreePine, Users, Flame, Sparkles, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 const services = [
 	{
@@ -166,9 +166,8 @@ export default function ServicesCarousel() {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [activePerk, setActivePerk] = useState(null);
 	const [activeImage, setActiveImage] = useState(null);
-	const sliderRef = useRef(null);
-	const [slideWidth, setSlideWidth] = useState(0);
-	const trackX = useMotionValue(0);
+	const [touchStartX, setTouchStartX] = useState(null);
+	const [touchEndX, setTouchEndX] = useState(null);
 
 	const goTo = (idx) => setCurrentIndex((idx + services.length) % services.length);
 	const openPerkImage = (perk, image) => {
@@ -181,28 +180,24 @@ export default function ServicesCarousel() {
 		setActiveImage(null);
 	};
 
-	useEffect(() => {
-		if (!sliderRef.current) return;
-		const el = sliderRef.current;
-
-		const update = () => {
-			// ширина видимой области (одного слайда)
-			setSlideWidth(el.clientWidth || 0);
-		};
-
-		update();
-		const ro = new ResizeObserver(update);
-		ro.observe(el);
-		return () => ro.disconnect();
-	}, []);
-
-	useEffect(() => {
-		if (!slideWidth) return;
-		animate(trackX, -currentIndex * slideWidth, { duration: 0.35, ease: 'easeInOut' });
-	}, [currentIndex, slideWidth, trackX]);
+	const onTouchStart = (e) => {
+		setTouchEndX(null);
+		setTouchStartX(e.targetTouches[0].clientX);
+	};
+	const onTouchMove = (e) => {
+		setTouchEndX(e.targetTouches[0].clientX);
+	};
+	const onTouchEnd = () => {
+		if (touchStartX == null || touchEndX == null) return;
+		const distance = touchStartX - touchEndX;
+		const isLeftSwipe = distance > 60;
+		const isRightSwipe = distance < -60;
+		if (isLeftSwipe) goTo(currentIndex + 1);
+		if (isRightSwipe) goTo(currentIndex - 1);
+	};
 
 	return (
-		<section className="relative overflow-hidden py-16 px-4 sm:py-20 bg-gradient-to-br from-stone-50 via-white to-stone-50">
+		<section className="relative overflow-hidden py-16 px-4 sm:py-20 bg-gradient-to-br from-stone-450 via-white to-stone-50">
 			{/* Ambient glows */}
 			<motion.div
 				animate={{ y: [0, 24, 0] }}
@@ -296,39 +291,23 @@ export default function ServicesCarousel() {
 					className="relative w-full"
 				>
 					<div
-						ref={sliderRef}
 						className="relative overflow-hidden rounded-3xl sm:rounded-4xl bg-white/72 border border-stone-200/70 backdrop-blur-2xl shadow-2xl shadow-stone-300/30 ring-1 ring-black/5"
+						onTouchStart={onTouchStart}
+						onTouchMove={onTouchMove}
+						onTouchEnd={onTouchEnd}
 					>
-						<motion.div
-							className="flex"
-							style={{ x: trackX }}
-							drag="x"
-							dragMomentum={false}
-							dragElastic={0.08}
-							dragConstraints={{
-								left: -(services.length - 1) * (slideWidth || 0),
-								right: 0,
-							}}
-							onDragEnd={(_, info) => {
-								if (!slideWidth) return;
-								const threshold = Math.max(50, slideWidth * 0.18);
-								const { offset, velocity } = info;
-								const swipePower = Math.abs(offset.x) * (velocity.x ? Math.abs(velocity.x) : 1);
-
-								if (offset.x < -threshold || swipePower > 20000) {
-									setCurrentIndex((prev) => Math.min(prev + 1, services.length - 1));
-									return;
+						{services.map((service, idx) => (
+							<motion.div
+								key={service.id}
+								initial={{ opacity: 0, x: 40 }}
+								animate={
+									idx === currentIndex
+										? { opacity: 1, x: 0, position: 'relative' }
+										: { opacity: 0, x: -40, position: 'absolute' }
 								}
-								if (offset.x > threshold || swipePower > 20000) {
-									setCurrentIndex((prev) => Math.max(prev - 1, 0));
-									return;
-								}
-								// snap back
-								animate(trackX, -currentIndex * slideWidth, { duration: 0.25, ease: 'easeOut' });
-							}}
-						>
-							{services.map((service) => (
-								<div key={service.id} className="w-full flex-shrink-0">
+								transition={{ duration: 0.45 }}
+								className={idx === currentIndex ? 'block' : 'hidden'}
+							>
 								<div className="relative h-[280px] sm:h-[340px] md:h-[420px] w-full overflow-hidden">
 									<Image
 										src={service.image || '/image/hero-bg.jpg'}
@@ -381,9 +360,8 @@ export default function ServicesCarousel() {
 										))}
 									</div>
 								</div>
-								</div>
-							))}
-						</motion.div>
+							</motion.div>
+						))}
 					</div>
 
 					{/* Drawer with perk image */}
