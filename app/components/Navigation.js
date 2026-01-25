@@ -13,7 +13,7 @@ const navItems = [
   { href: '/services', label: 'Услуги и сервис' },
   { href: '/faq', label: 'Частые вопросы' },
   { href: '/contacts', label: 'Контакты' },
-  
+
 ];
 
 export default function Navigation() {
@@ -37,10 +37,10 @@ export default function Navigation() {
       });
       setCurrentTime(`${timeString}, ${dateString}`);
     };
-    
+
     updateTime();
     const timer = setInterval(updateTime, 60000); // Update every minute
-    
+
     return () => clearInterval(timer);
   }, []);
 
@@ -64,8 +64,8 @@ export default function Navigation() {
                   height={64}
                   className="object-contain"
                 />
-                <div className="text-2xl font-bold text-amber-700">
-                 -
+                <div className="text-2xl font-bold text-primary">
+                  -
                 </div>
               </motion.div>
             </Link>
@@ -76,11 +76,10 @@ export default function Navigation() {
                 <Link key={item.href} href={item.href}>
                   <motion.div
                     whileHover={{ scale: 1.05 }}
-                    className={`px-3 py-2 rounded-lg transition-all duration-300 ${
-                      pathname === item.href
-                        ? 'bg-gray-100 text-black font-medium'
-                        : 'text-gray-700 hover:text-black hover:bg-gray-50'
-                    }`}
+                    className={`px-3 py-2 rounded-lg transition-all duration-300 font-medium ${pathname === item.href
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-gray-700 hover:text-primary hover:bg-primary/5'
+                      }`}
                   >
                     {item.label}
                   </motion.div>
@@ -91,15 +90,15 @@ export default function Navigation() {
             {/* Desktop Contact Info */}
             <div className="hidden md:flex items-center space-x-4">
               <div className="flex items-center gap-2 text-sm text-gray-700">
-                <Phone className="w-4 h-4 text-gray-600" />
+                <Phone className="w-4 h-4 text-primary" />
                 <span>+7 (962) 807-50-50</span>
               </div>
             </div>
 
-{/* Mobile Menu Button */}
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg glass hover:bg-white/10 transition-colors"
+              className="md:hidden p-2 rounded-lg glass hover:bg-white/20 transition-colors text-gray-800"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -108,71 +107,70 @@ export default function Navigation() {
 
         {/* Expandable Menu (Desktop & Mobile) */}
         {isOpen && (
-        <motion.div
-          initial={false}
-          animate={{ height: isOpen ? 'auto' : 0 }}
-          className="overflow-hidden glass border-t border-white/20"
-        >
-          <div className="px-4 py-4 space-y-2">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
-                <motion.div
-                  whileHover={{ x: 10 }}
-                  className={`block px-4 py-3 rounded-lg transition-all duration-300 ${
-                    pathname === item.href
-                      ? 'bg-gray-100 text-black font-medium'
-                      : 'text-gray-700 hover:text-black hover:bg-gray-50'
-                  }`}
-                >
-                  {item.label}
-                </motion.div>
-              </Link>
-            ))}
-            <div className="pt-4 border-t border-white/20">
-              {/* Widgets */}
-              <div className="grid grid-cols-1 gap-3 mb-4">
-                {/* Time Widget */}
-                <div className="glass p-3 rounded-xl border border-white/20">
-                  <div className="flex items-center gap-2 text-gray-700 mb-1">
-                    <Clock className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Местное время</span>
-                  </div>
-                  <p className="text-black font-medium text-sm">
-                    {currentTime || 'Загрузка...'}
-                  </p>
-                </div>
-
-                {/* Location Widget */}
-                <div className="glass p-3 rounded-xl border border-white/20">
-                  <div className="flex items-center gap-2 text-gray-600 mb-1">
-                    <MapPin className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Расположение</span>
-                  </div>
-                  <p className="text-black font-medium text-sm mb-2">
-                    Село Ая, ул. Советская 50
-                  </p>
-                  <motion.a
-                    href="https://yandex.ru/maps/11235/altai-krai/house/sovetskaya_ulitsa_50/bEwYfgZkSEYAQFtrfXV1dHxkYg==/?ll=85.815381%2C51.944491&z=16.6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                    className="inline-flex items-center gap-2 bg-blue-50 text-blue-600 px-3 py-2 rounded-lg text-xs font-medium hover:bg-blue-100"
+          <motion.div
+            initial={false}
+            animate={{ height: isOpen ? 'auto' : 0 }}
+            className="overflow-hidden glass border-t border-white/20"
+          >
+            <div className="px-4 py-4 space-y-2">
+              {navItems.map((item) => (
+                <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
+                  <motion.div
+                    whileHover={{ x: 10 }}
+                    className={`block px-4 py-3 rounded-lg transition-all duration-300 font-medium ${pathname === item.href
+                      ? 'bg-primary/10 text-primary'
+                      : 'text-gray-700 hover:text-primary hover:bg-primary/5'
+                      }`}
                   >
-                    <ExternalLink className="w-3 h-3" />
-                    Показать на карте
-                  </motion.a>
-                </div>
-              </div>
+                    {item.label}
+                  </motion.div>
+                </Link>
+              ))}
+              <div className="pt-4 border-t border-white/20">
+                {/* Widgets */}
+                <div className="grid grid-cols-1 gap-3 mb-4">
+                  {/* Time Widget */}
+                  <div className="glass p-3 rounded-xl border border-white/20">
+                    <div className="flex items-center gap-2 text-gray-700 mb-1">
+                      <Clock className="w-4 h-4 text-primary" />
+                      <span className="text-sm font-semibold">Местное время</span>
+                    </div>
+                    <p className="text-black font-medium text-sm">
+                      {currentTime || 'Загрузка...'}
+                    </p>
+                  </div>
 
-              <div className="flex items-center gap-2 text-sm text-slate-600 mb-3">
-                <Phone className="w-4 h-4 text-emerald-500" />
-                <span>+7 (962) 807-50-50</span>
+                  {/* Location Widget */}
+                  <div className="glass p-3 rounded-xl border border-white/20">
+                    <div className="flex items-center gap-2 text-gray-600 mb-1">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      <span className="text-sm font-semibold">Расположение</span>
+                    </div>
+                    <p className="text-black font-medium text-sm mb-2">
+                      Село Ая, ул. Советская 50
+                    </p>
+                    <motion.a
+                      href="https://yandex.ru/maps/11235/altai-krai/house/sovetskaya_ulitsa_50/bEwYfgZkSEYAQFtrfXV1dHxkYg==/?ll=85.815381%2C51.944491&z=16.6"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-2 rounded-lg text-xs font-medium hover:bg-primary/20 transition-colors"
+                    >
+                      <ExternalLink className="w-3 h-3" />
+                      Показать на карте
+                    </motion.a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 text-sm text-slate-600 mb-3">
+                  <Phone className="w-4 h-4 text-primary" />
+                  <span>+7 (962) 807-50-50</span>
+                </div>
+
               </div>
-             
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
         )}
       </motion.nav>
     </>

@@ -230,20 +230,18 @@ export default function ServicesCarousel() {
 							<button
 								key={service.id}
 								onClick={() => goTo(idx)}
-								className={`w-full text-left rounded-2xl border transition-all px-4 py-3 backdrop-blur-md ${
-									idx === currentIndex
-										? 'bg-white/85 border-stone-200 shadow-xl shadow-stone-300/40'
-										: 'bg-white/65 border-stone-200/70 hover:bg-white/80 shadow-lg shadow-stone-200/30'
-								}`}
+								className={`w-full text-left rounded-2xl border transition-all px-4 py-3 backdrop-blur-md ${idx === currentIndex
+									? 'bg-white/85 border-stone-200 shadow-xl shadow-stone-300/40'
+									: 'bg-white/65 border-stone-200/70 hover:bg-white/80 shadow-lg shadow-stone-200/30'
+									}`}
 							>
 								<div className="flex items-center justify-between gap-3">
 									<div className="flex items-center gap-3 text-base font-semibold">
 										<span
-											className={`inline-flex h-10 w-10 items-center justify-center rounded-xl ${
-											idx === currentIndex 
-												? 'bg-white text-amber-700' 
+											className={`inline-flex h-10 w-10 items-center justify-center rounded-xl ${idx === currentIndex
+												? 'bg-primary text-white shadow-lg shadow-primary/30'
 												: 'bg-white/70 text-stone-700'
-										}`}
+												}`}
 										>
 											{service.icon}
 										</span>
@@ -260,7 +258,7 @@ export default function ServicesCarousel() {
 											<div
 												className={
 													idx === currentIndex
-														? 'text-stone-700 text-base leading-snug'
+														? 'text-primary text-base leading-snug'
 														: 'text-stone-600 text-base leading-snug'
 												}
 											>
@@ -271,7 +269,7 @@ export default function ServicesCarousel() {
 									<div
 										className={
 											idx === currentIndex
-												? 'text-amber-800 text-sm font-semibold'
+												? 'text-primary text-sm font-semibold'
 												: 'text-stone-700 text-sm font-semibold hover:text-stone-900'
 										}
 									>
@@ -291,7 +289,7 @@ export default function ServicesCarousel() {
 					className="relative w-full"
 				>
 					<div
-						className="relative overflow-hidden rounded-3xl sm:rounded-4xl bg-white/72 border border-stone-200/70 backdrop-blur-2xl shadow-2xl shadow-stone-300/30 ring-1 ring-black/5"
+						className="relative overflow-hidden rounded-3xl sm:rounded-4xl bg-white/72 border border-stone-200/70 backdrop-blur-2xl shadow-2xl shadow-stone-300/30 ring-1 ring-black/5 min-h-[900px]"
 						onTouchStart={onTouchStart}
 						onTouchMove={onTouchMove}
 						onTouchEnd={onTouchEnd}
@@ -321,7 +319,7 @@ export default function ServicesCarousel() {
 
 									<div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/88 backdrop-blur-md text-xs shadow-lg shadow-stone-200/70 border border-stone-200/70">
 										{service.icon}
-									<span className="font-medium text-gray-700">{service.subtitle}</span>
+										<span className="font-medium text-gray-700">{service.subtitle}</span>
 									</div>
 									{service.status && (
 										<div className="absolute top-4 right-4 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-semibold">
@@ -333,18 +331,18 @@ export default function ServicesCarousel() {
 								<div className="p-8 md:p-10 space-y-5">
 									<div className="flex flex-wrap items-start justify-between gap-4">
 										<div className="space-y-1">
-											<h3 className="text-3xl font-semibold text-amber-800">{service.title}</h3>
-											<p className="text-amber-600">{service.subtitle}</p>
+											<h3 className="text-3xl font-semibold text-gray-900">{service.title}</h3>
+											<p className="text-primary font-medium">{service.subtitle}</p>
 										</div>
 										{service.price && (
 											<div className="text-right">
-												<div className="text-2xl font-bold text-amber-700">{service.price}</div>
+												<div className="text-2xl font-bold text-primary">{service.price}</div>
 												<p className="text-xs text-amber-500">{service.minTime}</p>
 											</div>
 										)}
 									</div>
 
-									<p className="text-amber-700 leading-relaxed">{service.description}</p>
+									<p className="text-gray-700 leading-relaxed">{service.description}</p>
 
 									<div className="grid sm:grid-cols-2 gap-2">
 										{service.perks?.map((perk, perkIdx) => (
@@ -352,9 +350,9 @@ export default function ServicesCarousel() {
 												key={perkIdx}
 												type="button"
 												onClick={() => openPerkImage(perk, service.perkImages?.[perk])}
-												className="flex items-center gap-2 px-3 py-2 rounded-xl bg-gradient-to-r from-amber-50/80 to-rose-50/80 border border-amber-200/40 text-sm text-amber-700 text-left hover:from-amber-100/80 hover:to-rose-100/80 transition-colors"
+												className="flex items-center gap-2 px-3 py-2 rounded-xl bg-gradient-to-r from-amber-50/80 to-rose-50/80 border border-amber-200/40 text-sm text-gray-700 text-left hover:from-amber-100/80 hover:to-rose-100/80 transition-colors shadow-sm"
 											>
-												<span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-cyan-600 to-emerald-600" />
+												<span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-primary to-secondary" />
 												{perk}
 											</button>
 										))}
@@ -371,13 +369,13 @@ export default function ServicesCarousel() {
 							animate={{ x: 0, opacity: 1 }}
 							exit={{ x: 320, opacity: 0 }}
 							transition={{ duration: 0.3 }}
-						className="fixed right-4 bottom-4 z-20 w-80 max-w-[90vw] rounded-2xl overflow-hidden bg-white/85 backdrop-blur-xl border border-amber-200/40 shadow-2xl shadow-amber-200/10"
-					>
-						<div className="flex items-center justify-between px-4 py-3 border-b border-amber-200/20">
-							<p className="text-sm font-medium text-amber-800">{activePerk}</p>
-							<button
-								onClick={closePerkImage}
-								className="text-amber-600 hover:text-amber-800 transition"
+							className="fixed right-4 bottom-4 z-20 w-80 max-w-[90vw] rounded-2xl overflow-hidden bg-white/85 backdrop-blur-xl border border-amber-200/40 shadow-2xl shadow-amber-200/10"
+						>
+							<div className="flex items-center justify-between px-4 py-3 border-b border-amber-200/20">
+								<p className="text-sm font-medium text-amber-800">{activePerk}</p>
+								<button
+									onClick={closePerkImage}
+									className="text-amber-600 hover:text-amber-800 transition"
 									aria-label="Закрыть"
 								>
 									✕
@@ -402,11 +400,10 @@ export default function ServicesCarousel() {
 								<button
 									key={idx}
 									onClick={() => goTo(idx)}
-									className={`h-2.5 rounded-full transition-all ${
-										idx === currentIndex 
-											? 'w-10 bg-black shadow-md shadow-black/20'
-											: 'w-4 bg-black/25 hover:bg-black/35 shadow-sm shadow-black/10'
-									}`}
+									className={`h-2.5 rounded-full transition-all ${idx === currentIndex
+										? 'w-10 bg-black shadow-md shadow-black/20'
+										: 'w-4 bg-black/25 hover:bg-black/35 shadow-sm shadow-black/10'
+										}`}
 									aria-label={`Показать ${idx + 1}-й слайд`}
 								/>
 							))}

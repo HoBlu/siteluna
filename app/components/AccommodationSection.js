@@ -112,7 +112,7 @@ export default function AccommodationSection() {
               transition={{ duration: 0.8, delay: index * 0.2 }}
               className="group"
             >
-              <div className="neumorphism rounded-2xl sm:rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-500">
+              <div className="glass-card rounded-2xl sm:rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-500 bg-white">
                 {/* Image */}
                 <div className="relative">
                   <motion.img
@@ -123,12 +123,12 @@ export default function AccommodationSection() {
                     transition={{ duration: 0.3 }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                  
+
                   {/* Type badge */}
                   <div className={`absolute top-4 left-4 px-3 py-2 rounded-full bg-gradient-to-r ${accommodation.gradient} text-white font-semibold text-sm backdrop-blur-sm`}>
                     {accommodation.type}
                   </div>
-                  
+
                   {/* Title overlay */}
                   <div className="absolute bottom-4 left-4 right-4">
                     <h3 className="text-2xl font-bold text-white mb-2">
@@ -145,12 +145,12 @@ export default function AccommodationSection() {
 
                   {/* Amenities */}
                   <div>
-                    <h4 className="text-lg font-semibold text-gray-700 mb-4">Удобства</h4>
+                    <h4 className="text-lg font-semibold text-gray-800 mb-4">Удобства</h4>
                     <div className="grid grid-cols-2 gap-3">
                       {accommodation.amenities.map((amenity, amenityIndex) => (
                         <motion.div
                           key={amenityIndex}
-                          className="flex items-center gap-3 p-3 rounded-xl glass hover:shadow-md transition-all duration-300"
+                          className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 border border-gray-100 hover:shadow-md transition-all duration-300"
                           whileHover={{ scale: 1.02 }}
                         >
                           <div className={`p-2 rounded-lg bg-gradient-to-r ${accommodation.gradient} text-white flex-shrink-0`}>
@@ -161,7 +161,7 @@ export default function AccommodationSection() {
                       ))}
                     </div>
                   </div>
-                  
+
                   {/* Action Button */}
                   <div className="mt-6 pt-4 border-t border-gray-100">
                     <Link href={accommodation.link}>
@@ -183,7 +183,7 @@ export default function AccommodationSection() {
         {/* Mobile: New Modern Carousel */}
         <div className="lg:hidden">
           {/* Swipeable Carousel Container */}
-          <div 
+          <div
             className="relative"
             onTouchStart={onTouchStart}
             onTouchMove={onTouchMove}
@@ -197,8 +197,8 @@ export default function AccommodationSection() {
               >
                 {accommodations.map((accommodation, index) => (
                   <div key={accommodation.id} className="w-full flex-shrink-0">
-                    <motion.div 
-                      className="bg-white rounded-3xl shadow-xl overflow-hidden mx-2"
+                    <motion.div
+                      className="glass-card rounded-3xl shadow-xl overflow-hidden mx-2 bg-white"
                       whileHover={{ scale: 1.02 }}
                       transition={{ duration: 0.3 }}
                     >
@@ -210,12 +210,12 @@ export default function AccommodationSection() {
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                        
+
                         {/* Floating Badge */}
                         <div className={`absolute top-4 left-4 px-3 py-1.5 rounded-full bg-gradient-to-r ${accommodation.gradient} text-white font-bold text-xs backdrop-blur-sm shadow-lg`}>
                           {accommodation.type}
                         </div>
-                        
+
                         {/* Title Section */}
                         <div className="absolute bottom-4 left-4 right-4">
                           <h3 className="text-xl font-bold text-white mb-1">
@@ -279,6 +279,7 @@ export default function AccommodationSection() {
               </motion.div>
             </div>
 
+
             {/* Side Navigation Buttons */}
             <button
               onClick={prevSlide}
@@ -286,7 +287,7 @@ export default function AccommodationSection() {
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
-            
+
             <button
               onClick={nextSlide}
               className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-700 hover:bg-white hover:shadow-xl transition-all duration-300 shadow-lg z-10"
@@ -302,11 +303,10 @@ export default function AccommodationSection() {
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    index === currentSlide
-                      ? 'bg-blue-500 text-white shadow-lg hover:bg-blue-600'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-black'
-                  }`}
+                  className={`px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${index === currentSlide
+                    ? 'bg-blue-500 text-white shadow-lg hover:bg-blue-600'
+                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200 hover:text-black'
+                    }`}
                 >
                   {index === 0 ? 'Гостевой Дом' : 'Семейный номер'}
                 </button>
@@ -321,11 +321,10 @@ export default function AccommodationSection() {
                 <div key={index} className="flex items-center">
                   <button
                     onClick={() => setCurrentSlide(index)}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                      index === currentSlide
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 w-8'
-                        : 'bg-gray-300'
-                    }`}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide
+                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 w-8'
+                      : 'bg-gray-300'
+                      }`}
                   />
                   {index < accommodations.length - 1 && (
                     <div className="w-4 h-0.5 bg-gray-200 mx-1"></div>

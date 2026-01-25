@@ -17,13 +17,13 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2"
           >
-            <h3 className="text-3xl font-bold bg-gradient-to-r from-sky-400 via-blue-400 to-slate-400 bg-clip-text text-transparent mb-4">
+            <h3 className="text-3xl font-bold bg-gradient-to-r from-amber-400 via-orange-400 to-rose-400 bg-clip-text text-transparent mb-4">
               ЛУНА №50
             </h3>
             <p className="text-slate-300 text-lg mb-6 max-w-md">
               Уютный отдых в горах Алтая. Откройте для себя комфорт и красоту природы на нашей горной базе отдыха.
             </p>
-       
+
           </motion.div>
 
           {/* Contact Info */}
@@ -35,21 +35,21 @@ export default function Footer() {
             <h4 className="text-xl font-semibold mb-6">Контакты</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-sky-400 mt-1 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-slate-300">Республика Алтай</p>
                   <p className="text-slate-400 text-sm">Горный Алтай</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-emerald-400 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
                 <div>
                   <p className="text-slate-300">+7 (962) 807-50-50</p>
                   <p className="text-slate-400 text-sm">Круглосуточно</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-gray-600 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-white/50 flex-shrink-0" />
                 <p className="text-white">luna50.altai@yandex.ru</p>
               </div>
             </div>
@@ -64,7 +64,7 @@ export default function Footer() {
             <h4 className="text-xl font-semibold mb-6">Режим работы</h4>
             <div className="space-y-4 mb-8">
               <div className="flex items-center gap-3">
-                <Clock className="w-5 h-5 text-sky-400 flex-shrink-0" />
+                <Clock className="w-5 h-5 text-primary flex-shrink-0" />
                 <div>
                   <p className="text-slate-300">Круглосуточно</p>
                   <p className="text-slate-400 text-sm">7 дней в неделю</p>
@@ -80,7 +80,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-10 h-10 bg-gradient-to-r from-sky-500 to-blue-500 rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-300"
+                className="w-10 h-10 bg-gradient-to-r from-amber-500 to-rose-500 rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-300"
               >
                 <Instagram className="w-5 h-5" />
               </motion.a>
@@ -90,7 +90,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-300"
+                className="w-10 h-10 bg-gradient-to-r from-emerald-500 to-green-600 rounded-full flex items-center justify-center hover:shadow-lg transition-all duration-300"
               >
                 <MessageCircle className="w-5 h-5" />
               </motion.a>
@@ -116,7 +116,7 @@ export default function Footer() {
           className="border-t border-slate-800 mt-12 pt-8 text-center"
         >
           <p className="text-slate-400">
-            © {currentYear} Луна №50. Все права защищены. 
+            © {currentYear} Луна №50. Все права защищены.
             <span className="mx-2">|</span>
             Создано с ❤️ для незабываемого отдыха в горах Алтая
           </p>

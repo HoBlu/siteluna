@@ -32,21 +32,15 @@ export default function HeroSection() {
             transition={{ duration: 1.2, delay: 0.3 }}
             className="max-w-2xl"
           >
-            
-            
+
+
 
             {/* Main Title - match subtitle tint */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
-              className="text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-tight drop-shadow-2xl"
-              style={{
-                color: 'rgba(255,255,255,0.9)',
-                WebkitTextFillColor: 'rgba(255,255,255,0.9)',
-                WebkitBackgroundClip: 'unset',
-                background: 'none',
-              }}
+              className="text-6xl lg:text-7xl xl:text-8xl font-bold mb-6 leading-tight drop-shadow-2xl text-transparent bg-clip-text bg-gradient-to-br from-white via-white/90 to-white/80"
             >
               ЛУНА №50
             </motion.h1>

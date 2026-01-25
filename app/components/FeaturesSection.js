@@ -71,10 +71,10 @@ export default function FeaturesSection() {
 					transition={{ duration: 0.8 }}
 					className="text-center mb-16"
 				>
-				<h2 className="text-4xl md:text-5xl font-bold mb-6 text-amber-700">
-					Особенности
-				</h2>
-				<p className="text-lg text-gray-600 max-w-3xl mx-auto">
+					<h2 className="text-4xl md:text-5xl font-bold mb-6 text-amber-700">
+						Особенности
+					</h2>
+					<p className="text-lg text-gray-600 max-w-3xl mx-auto">
 						Наша база отдыха создана с особым вниманием к деталям для вашего
 						максимального комфорта
 					</p>
@@ -93,7 +93,7 @@ export default function FeaturesSection() {
 							}}
 							className="group relative"
 						>
-							<div className="neumorphism rounded-3xl p-8 h-full relative overflow-hidden">
+							<div className="glass-card rounded-3xl p-8 h-full relative overflow-hidden bg-white/50">
 								{/* Background gradient overlay */}
 								<div
 									className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-3xl`}
@@ -115,11 +115,11 @@ export default function FeaturesSection() {
 
 								{/* Content */}
 								<div className="relative z-10">
-									<h3 className="text-xl font-bold text-amber-700 mb-4 group-hover:text-amber-600 transition-colors leading-tight">
+									<h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-primary transition-colors leading-tight">
 										{feature.title}
 									</h3>
 
-									<p className="text-gray-700 leading-relaxed group-hover:text-gray-800 transition-colors">
+									<p className="text-gray-700 leading-relaxed group-hover:text-gray-900 transition-colors">
 										{feature.description}
 									</p>
 								</div>

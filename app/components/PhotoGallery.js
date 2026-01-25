@@ -8,42 +8,42 @@ const galleryImages = [
   {
     id: 1,
     src: '/image/gallery-1.jpg',
-    
+
   },
   {
     id: 2,
     src: '/image/gallery-2.jpg',
-  
+
   },
   {
     id: 3,
     src: '/image/gallery-3.jpg',
-   
+
   },
   {
     id: 4,
     src: '/image/gallery-4.jpg',
-   
+
   },
   {
     id: 5,
     src: '/image/gallery-5.jpg',
-   
+
   },
   {
     id: 6,
     src: '/image/gallery-6.jpg',
-   
+
   },
   {
     id: 7,
     src: '/image/gallery-7.jpg',
-   
+
   },
   {
     id: 8,
     src: '/image/gallery-8.jpg',
-   
+
   }
 ];
 
@@ -108,7 +108,7 @@ export default function PhotoGallery() {
                     alt={image.alt}
                     className="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  
+
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
