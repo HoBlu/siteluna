@@ -151,7 +151,10 @@ const services = [
 			'Для мероприятий и банкетов',
 		],
 		perkImages: {
-			'Фото конференц-зала': '/image/conference.jpg',
+			'Фото конференц-зала': '/image/2etaj4.jpg',
+			'Санузел + кухонная зона': '/image/2etaj.jpg',
+			'Телевизор и звук': '/image/2-etaj.jpg',
+			'Для мероприятий и банкетов': '/image/2etaj2.jpg',
 		},
 	},
 	{
