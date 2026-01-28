@@ -133,7 +133,7 @@ const services = [
 			'Летняя кухня с мангалами для самостоятельного приготовления, а также возможность самостоятелной стирки во время проживания.',
 		icon: <Home className="w-8 h-8" />,
 		gradient: 'from-slate-400 to-slate-600',
-		image: '/image/summer-kitchen.jpg',
+		image: '/image/baza3.jpg',
 		perks: ['Фото летней кухни', 'Мангал для гостей'],
 		perkImages: {
 			'Фото летней кухни': '/image/summer-kitchen.png',
