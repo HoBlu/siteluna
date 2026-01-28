@@ -6,78 +6,65 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import Layout from '../components/Layout';
 
 const galleryImages = [
-  {
-    id: 1,
-    src: '/image/gallery-1.jpg',
-
-    
-  },
-  {
-    id: 2,
-    src: '/image/gallery-2.jpg',
- 
-
-  },
-  {
-    id: 3,
-    src: '/image/gallery-3.jpg',
- 
-  
-  },
-  {
-    id: 4,
-    src: '/image/gallery-4.jpg',
-    
-   
-  },
-  {
-    id: 5,
-    src: '/image/gallery-5.jpg',
-   
-    
-  },
-  {
-    id: 6,
-    src: '/image/gallery-6.jpg',
- 
-   
-  },
-  {
-    id: 7,
-    src: '/image/gallery-7.jpg',
-   
-   
-  },
-  {
-    id: 8,
-    src: '/image/gallery-8.jpg',
-  
-  
-  },
-  {
-    id: 9,
-    src: '/image/hero-bg.jpg',
-
-    
-  },
-  {
-    id: 10,
-    src: '/image/guest-house.jpg',
-
- 
-  },
-  {
-    id: 11,
-    src: '/image/family-suite.jpg',
- 
-   
-  },
-  {
-    id: 12,
-    src: '/image/gallery-11.jpg',
-
-  
-  }
+  { id: 1, src: '/image/gallery-1.jpg', title: 'Природа Алтая' },
+  { id: 2, src: '/image/gallery-2.jpg', title: 'Виды базы' },
+  { id: 3, src: '/image/gallery-3.jpg', title: 'Баня' },
+  { id: 4, src: '/image/gallery-4.jpg', title: 'Территория' },
+  { id: 5, src: '/image/gallery-5.jpg', title: 'Отдых' },
+  { id: 6, src: '/image/gallery-6.jpg', title: 'Бассейн' },
+  { id: 7, src: '/image/gallery-7.jpg', title: 'Номера' },
+  { id: 8, src: '/image/gallery-8.jpg', title: 'Уют' },
+  { id: 9, src: '/image/hero-bg.jpg', title: 'Главный вид' },
+  { id: 10, src: '/image/guest-house.jpg', title: 'Гостевой дом' },
+  { id: 11, src: '/image/family-suite.jpg', title: 'Семейный люкс' },
+  { id: 12, src: '/image/gallery-11.jpg', title: 'Детали' },
+  // Accommodation - Family Suite
+  { id: 13, src: '/image/family-suite-10jpg.jpg', title: 'Семейный номер' },
+  { id: 14, src: '/image/family-suite-1jpg.jpg', title: 'Интерьер номера' },
+  { id: 15, src: '/image/family-suite-2jpg.jpg', title: 'Спальня' },
+  { id: 16, src: '/image/family-suite-3jpg.jpg', title: 'Комфорт' },
+  { id: 17, src: '/image/family-suite-4jpg.jpg', title: 'Детали интерьера' },
+  { id: 18, src: '/image/family-suite-5jpg.jpg', title: 'Зона отдыха' },
+  { id: 19, src: '/image/family-suite-6jpg.jpg', title: 'Удобства' },
+  { id: 20, src: '/image/family-suite-7jpg.jpg', title: 'Ванная комната' },
+  { id: 21, src: '/image/family-suite-8jpg.jpg', title: 'Вид из номера' },
+  { id: 22, src: '/image/family-suite-9jpg.jpg', title: 'Уютная атмосфера' },
+  // Accommodation - Guest House
+  { id: 23, src: '/image/gost-suite-interior.jpg', title: 'Интерьер домика' },
+  { id: 24, src: '/image/gost-suite-kitchen.jpg', title: 'Кухня в домике' },
+  { id: 25, src: '/image/gost-suite-terrace.jpg', title: 'Терраса домика' },
+  { id: 26, src: '/image/gost-suite-bathroom.jpg', title: 'Санузел' },
+  { id: 27, src: '/image/gost-suite-view.jpg', title: 'Вид с террасы' },
+  // Services & Amenities
+  { id: 28, src: '/image/baza3.jpg', title: 'Домики' },
+  { id: 29, src: '/image/tv.jpg', title: 'Удобства' },
+  { id: 30, src: '/image/baza4.jpg', title: 'Зимний вид' },
+  { id: 31, src: '/image/doma.jpg', title: 'Наши домики' },
+  { id: 32, src: '/image/kitcchen.jpg', title: 'Кухня' },
+  { id: 33, src: '/image/2-etaj.jpg', title: 'Беседка' },
+  { id: 34, src: '/image/poll3.jpg', title: 'Бассейн (общий вид)' },
+  { id: 35, src: '/image/poll2.jpg', title: 'Бассейн (теплая вода)' },
+  { id: 36, src: '/image/photo_2026-01-27_18-23-35.jpg', title: 'Зона отдыха у бассейна' },
+  { id: 37, src: '/image/IMG_20250711_184546.jpg', title: 'Баня снаружи' },
+  { id: 38, src: '/image/par.jpg', title: 'Парная' },
+  { id: 39, src: '/image/IMG_20250711_183526 (2).jpg', title: 'Комната отдыха' },
+  // Activities and Surroundings
+  { id: 41, src: '/image/4c6b5763a479eec7da7ad6ab54701b3a.jpg', title: 'Сплавы' },
+  { id: 42, src: '/image/img_66139f42a42c2_936.jpg', title: 'Конные прогулки' },
+  { id: 43, src: '/image/alt_birkat_02.jpg', title: 'Аквапарк' },
+  { id: 44, src: '/image/4.jpg', title: 'Квадроциклы' },
+  { id: 45, src: '/image/d36e4620743af6f53599ec6757e860ce.jpg', title: 'Джип-туры' },
+  { id: 46, src: '/image/ozeroaya.jpg', title: 'Озеро Ая' },
+  { id: 47, src: '/image/palec.jpg', title: 'Чёртов палец' },
+  { id: 48, src: '/image/majerok.jpg', title: 'Манжерок' },
+  // Territory and Other Services
+  { id: 50, src: '/image/summer-kitchen.png', title: 'Летняя кухня' },
+  { id: 51, src: '/image/mangal.jpg', title: 'Мангал' },
+  { id: 52, src: '/image/conference.jpg', title: 'Конференц-зал' },
+  { id: 53, src: '/image/2etaj4.jpg', title: 'Зал для мероприятий' },
+  { id: 54, src: '/image/2etaj2.jpg', title: 'Банкетная зона' },
+  { id: 55, src: '/image/dom2.jpg', title: 'Территория базы' },
+  { id: 56, src: '/image/IMG_20250720_180346.jpg', title: 'Природа вокруг' }
 ];
 
 export default function GalleryPage() {
@@ -142,7 +129,7 @@ export default function GalleryPage() {
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  
+
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">

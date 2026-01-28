@@ -65,9 +65,9 @@ const services = [
 		],
 		perkImages: {
 			'Подогрев круглый год': '/image/poll2.jpg',
-			'Две чаши: детская 0.45 м, взрослая 1.4 м': '/image/pooll.jpg',
+			'Две чаши: детская 0.45 м, взрослая 1.4 м': '/image/gallery-6.jpg',
 			'Размер чаши 12×16 м': '/image/poll3.jpg',
-			'Шезлонги и пледы': '/image/gallery-6.jpg',
+			'Шезлонги и пледы': '/image/photo_2026-01-27_18-23-35.jpg',
 		},
 	},
 	{
@@ -76,13 +76,13 @@ const services = [
 		subtitle: 'Русская баня, прогрев и релакс',
 		description: 'Прогрев, веники, релакс-зона. Традиционное парение в окружении горной природы.',
 		icon: <Flame className="w-8 h-8" />,
-		price: '2000 ₽/час',
-		minTime: 'Минимум 2 часа',
 		gradient: 'from-red-400 to-orange-500',
 		image: '/image/gallery-3.jpg',
 		perks: ['Фото бани', 'Парение', 'Комната отдыха'],
 		perkImages: {
-			'Фото бани': '/image/banya.jpg',
+			'Фото бани': '/image/IMG_20250711_184546.jpg',
+			'Парение': '/image/par.jpg',
+			'Комната отдыха': '/image/IMG_20250711_183526 (2).jpg',
 		},
 	},
 	{
@@ -93,7 +93,7 @@ const services = [
 			'Катание на моторной лодке, сплав по реке, прогулки на лошадях, аквапарк на озере Ая, прокат квадроциклов и джип-туры. Подберём программу под ваш темп и интересы.',
 		icon: <Waves className="w-8 h-8" />,
 		gradient: 'from-sky-400 to-indigo-500',
-		image: '/image/activities.jpg',
+		image: '/image/Make_a_picture_202601281002.jpeg',
 		perks: [
 			'Моторная лодка и сплав',
 			'Прогулки на лошадях',
@@ -102,7 +102,11 @@ const services = [
 			'Джип-туры',
 		],
 		perkImages: {
-			'Фото развлечений': '/image/activities.jpg',
+			'Моторная лодка и сплав': '/image/4c6b5763a479eec7da7ad6ab54701b3a.jpg',
+			'Прогулки на лошадях': '/image/img_66139f42a42c2_936.jpg',
+			'Аквапарк на озере Ая': '/image/alt_birkat_02.jpg',
+			'Прокат квадроциклов': '/image/4.jpg',
+			'Джип-туры': '/image/d36e4620743af6f53599ec6757e860ce.jpg',
 		},
 	},
 	{
@@ -130,9 +134,11 @@ const services = [
 		icon: <Home className="w-8 h-8" />,
 		gradient: 'from-slate-400 to-slate-600',
 		image: '/image/summer-kitchen.jpg',
-		perks: ['Фото летней кухни', 'Мангал для гостей', 'Самостоятельная стирка'],
+		perks: ['Фото летней кухни', 'Мангал для гостей'],
 		perkImages: {
-			'Фото летней кухни': '/image/summer-kitchen.jpg',
+			'Фото летней кухни': '/image/summer-kitchen.png',
+			'Мангал для гостей': '/image/mangal.jpg',
+
 		},
 	},
 	{
@@ -165,10 +171,11 @@ const services = [
 			'Футбольные ворота, волейбольная площадка и детский комплекс прямо на территории. Подходит для активного отдыха детей и взрослых.',
 		icon: <TreePine className="w-8 h-8" />,
 		gradient: 'from-emerald-400 to-lime-500',
-		image: '/image/territory.jpg',
+		image: '/image/dom2.jpg',
 		perks: ['Фото территории', 'Футбольные ворота', 'Волейбольная площадка', 'Детский комплекс'],
 		perkImages: {
-			'Фото территории': '/image/territory.jpg',
+			'Фото территории': '/image/IMG_20250720_180346.jpg',
+
 		},
 	},
 ];

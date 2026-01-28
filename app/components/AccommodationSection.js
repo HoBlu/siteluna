@@ -12,7 +12,7 @@ const accommodations = [
     id: 1,
     type: "ГОСТЕВОЙ ДОМ",
     title: "Гостевой Дом",
-    description: "Гостевой дом, выполненный из кедра, представляет собой гармоничное сочетание комфорта и природы.",
+    description: "Гостевой дом с отделкой из кедра, представляет собой гармоничное сочетание комфорта и природы.",
     image: "/image/guest-house.jpg",
     link: "/accommodation/guest-house",
     amenities: [
