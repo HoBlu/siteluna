@@ -64,7 +64,19 @@ const galleryImages = [
   { id: 53, src: '/image/2etaj4.jpg', title: 'Зал для мероприятий' },
   { id: 54, src: '/image/2etaj2.jpg', title: 'Банкетная зона' },
   { id: 55, src: '/image/dom2.jpg', title: 'Территория базы' },
-  { id: 56, src: '/image/IMG_20250720_180346.jpg', title: 'Природа вокруг' }
+  { id: 56, src: '/image/IMG_20250720_180346.jpg', title: 'Природа вокруг' },
+  { id: 57, src: '/image/1.jfif', title: 'Банкетная зона' },
+  { id: 58, src: '/image/2.png', title: 'Территория базы' },
+  { id: 59, src: '/image/3.jfif', title: 'Природа вокруг' },
+  { id: 60, src: '/image/4.jfif', title: 'Летняя кухня' },
+  { id: 61, src: '/image/5.jfif', title: 'Мангал' },
+  { id: 62, src: '/image/6.jfif', title: 'Конференц-зал' },
+  { id: 63, src: '/image/7.jfif', title: 'Зал для мероприятий' },
+  { id: 64, src: '/image/8.jfif', title: 'Банкетная зона' },
+  { id: 65, src: '/image/9.jfif', title: 'Территория базы' },
+  { id: 66, src: '/image/10.jfif', title: 'Природа вокруг' },
+  { id: 67, src: '/image/11.jfif', title: 'Банкетная зона' },
+  { id: 68, src: '/image/12.jfif', title: 'Территория базы' }
 ];
 
 export default function GalleryPage() {

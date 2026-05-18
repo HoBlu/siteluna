@@ -42,7 +42,69 @@ const galleryImages = [
   },
   {
     id: 8,
+    src: '/image/1.jfif',
+
+  },
+  {
+    id: 9,
+    src: '/image/2.png',
+
+  },
+  {
+    id: 10,
+    src: '/image/3.jfif',
+
+  },
+  {
+    id: 11,
+    src: '/image/4.jfif',
+
+  },
+  {
+    id: 12,
+    src: '/image/5.jfif',
+
+  },
+  {
+    id: 13,
+    src: '/image/6.jfif',
+
+  },
+  {
+    id: 14,
+    src: '/image/7.jfif',
+
+  },
+  {
+    id: 15,
+    src: '/image/8.jfif',
+
+  },
+  {
+    id: 16,
+    src: '/image/9.jfif',
+
+  },
+  {
+    id: 17,
+    src: '/image/10.jfif',
+
+  },
+  {
+    id: 18,
+    src: '/image/11.jfif',
+
+  },
+  {
+    id: 19,
+    src: '/image/12.jfif',
+
+  },
+
+  {
+    id: 1222,
     src: '/image/gallery-8.jpg',
+    
 
   }
 ];
