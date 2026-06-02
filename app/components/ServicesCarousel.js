@@ -15,7 +15,7 @@ const services = [
 			'Отдельные домики в правом и левом ряду площадью 20 кв.м. Каждый домик оборудован кондиционером, телевизором, двуспальной кроватью и односпальной двухъярусной кроватью. Санузел с полом с подогревом. Современное отопление позволяет комфортно проживать круглый год.',
 		icon: <Home className="w-8 h-8" />,
 		gradient: 'white',
-		image: '/image/baza3.jpg',
+		image: '/image/Проживание/проживание1.jpg',
 		perks: [
 			'Размер комнаты: 20 кв.м',
 			'Кондиционер и телевизор',
@@ -25,12 +25,12 @@ const services = [
 			'Домики в правом и левом ряду',
 		],
 		perkImages: {
-			'Размер комнаты: 20 кв.м': '/image/gost-suite-interior.jpg',
-			'Кондиционер и телевизор': '/image/tv.jpg',
-			'Двуспальная и двухъярусная кровати': '/image/gost-suite-terrace.jpg',
-			'Санузел с тёплым полом': '/image/family-suite-7jpg.jpg',
-			'Отопление круглый год': '/image/baza4.jpg',
-			'Домики в правом и левом ряду': '/image/doma.jpg',
+			'Размер комнаты: 20 кв.м': '/image/Проживание/проживание1.jpg',
+			'Кондиционер и телевизор': '/image/Проживание/проживание2.jpg',
+			'Двуспальная и двухъярусная кровати': '/image/Проживание/проживание3.jpg',
+			'Санузел с тёплым полом': '/image/Проживание/проживание4.jpg',
+			'Отопление круглый год': '/image/Проживание/проживание5.jpg',
+			'Домики в правом и левом ряду': '/image/Проживание/проживание6.jpg',
 		},
 	},
 	{
@@ -41,11 +41,11 @@ const services = [
 			'Первый этаж с кухней и просторными беседками. Возможность заказать питание на весь период проживания: завтрак, обед и ужин. Меню обновим и добавим позже.',
 		icon: <Waves className="w-8 h-8" />,
 		gradient: 'from-cyan-400 to-blue-500',
-		image: '/image/kitcchen.jpg',
+		image: '/image/питание/питание1.jpg',
 		perks: ['Фото кухни (1 этаж)', 'Фото беседки', 'Завтрак, обед, ужин по заказу'],
 		perkImages: {
-			'Фото кухни (1 этаж)': '/image/kitcchen.jpg',
-			'Фото беседки': '/image/3.jfif',
+			'Фото кухни (1 этаж)': '/image/питание/питание1.jpg',
+			'Фото беседки': '/image/питание/Питание2.jpg',
 		},
 	},
 	{
@@ -56,7 +56,7 @@ const services = [
 			'Бассейн с подогревом, две чаши: взрослая 12×16 м (глубина 1.4 м) и детская (глубина 0.45 м). Комфортные шезлонги и зона отдыха, тёплая вода круглый год.',
 		icon: <Users className="w-8 h-8" />,
 		gradient: 'from-purple-400 to-pink-500',
-		image: '/image/poll3.jpg',
+		image: '/image/Бассейн/бассейн1.jpg',
 		perks: [
 			'Подогрев круглый год',
 			'Две чаши: детская 0.45 м, взрослая 1.4 м',
@@ -64,10 +64,10 @@ const services = [
 			'Шезлонги и пледы',
 		],
 		perkImages: {
-			'Подогрев круглый год': '/image/poll2.jpg',
-			'Две чаши: детская 0.45 м, взрослая 1.4 м': '/image/gallery-6.jpg',
-			'Размер чаши 12×16 м': '/image/poll3.jpg',
-			'Шезлонги и пледы': '/image/photo_2026-01-27_18-23-35.jpg',
+			'Подогрев круглый год': '/image/Бассейн/бассейн2.jpg',
+			'Две чаши: детская 0.45 м, взрослая 1.4 м': '/image/Бассейн/бассейн3.jpg',
+			'Размер чаши 12×16 м': '/image/Бассейн/бассейн4.jpg',
+			'Шезлонги и пледы': '/image/Бассейн/бассейн5.jpg',
 		},
 	},
 	{
@@ -77,12 +77,12 @@ const services = [
 		description: 'Прогрев, веники, релакс-зона. Традиционное парение в окружении горной природы.',
 		icon: <Flame className="w-8 h-8" />,
 		gradient: 'from-red-400 to-orange-500',
-		image: '/image/gallery-3.jpg',
+		image: '/image/Бани/Баня1.jpg',
 		perks: ['Фото бани', 'Парение', 'Комната отдыха'],
 		perkImages: {
-			'Фото бани': '/image/IMG_20250711_184546.jpg',
-			'Парение': '/image/par.jpg',
-			'Комната отдыха': '/image/IMG_20250711_183526 (2).jpg',
+			'Фото бани': '/image/Бани/Баня2.jpg',
+			'Парение': '/image/Бани/Баня3.jpg',
+			'Комната отдыха': '/image/Бани/Баня4.jpg',
 		},
 	},
 	{
@@ -93,7 +93,7 @@ const services = [
 			'Катание на моторной лодке, сплав по реке, прогулки на лошадях, аквапарк на озере Ая, прокат квадроциклов и джип-туры. Подберём программу под ваш темп и интересы.',
 		icon: <Waves className="w-8 h-8" />,
 		gradient: 'from-sky-400 to-indigo-500',
-		image: '/image/majerok.jpg',
+		image: '/image/Развлечения/Развлечения1.jpg',
 		perks: [
 			'Моторная лодка и сплав',
 			'Прогулки на лошадях',
@@ -102,11 +102,11 @@ const services = [
 			'Джип-туры',
 		],
 		perkImages: {
-			'Моторная лодка и сплав': '/image/4c6b5763a479eec7da7ad6ab54701b3a.jpg',
-			'Прогулки на лошадях': '/image/img_66139f42a42c2_936.jpg',
-			'Аквапарк на озере Ая': '/image/alt_birkat_02.jpg',
-			'Прокат квадроциклов': '/image/4.jpg',
-			'Джип-туры': '/image/d36e4620743af6f53599ec6757e860ce.jpg',
+			'Моторная лодка и сплав': '/image/Развлечения/Развлечения2.jpg',
+			'Прогулки на лошадях': '/image/Развлечения/Развлечения3.jpg',
+			'Аквапарк на озере Ая': '/image/Развлечения/Развлечения4.jpg',
+			'Прокат квадроциклов': '/image/Развлечения/Развлечения5.jpg',
+			'Джип-туры': '/image/Развлечения/Развлечения6.jpg',
 		},
 	},
 	{
@@ -117,12 +117,12 @@ const services = [
 			'Лучшие виды рядом: озеро Ая для купания и актива, скала Чёртов палец для панорам и фото, горнолыжный и всесезонный комплекс Манжерок для прогулок и подъёмов.',
 		icon: <MapPin className="w-8 h-8" />,
 		gradient: 'from-emerald-400 to-cyan-500',
-		image: '/image/ozeroaya.jpg',
+		image: '/image/Локации/Локации1.jpg',
 		perks: ['Озеро Ая', 'Чёртов палец', 'Комплекс Манжерок'],
 		perkImages: {
-			'Озеро Ая': '/image/ozeroaya.jpg',
-			'Чёртов палец': '/image/palec.jpg',
-			'Комплекс Манжерок': '/image/majerok.jpg',
+			'Озеро Ая': '/image/Локации/Локации1.jpg',
+			'Чёртов палец': '/image/Локации/Локации2.jpg',
+			'Комплекс Манжерок': '/image/Локации/Локации3.jpg',
 		},
 	},
 	{
@@ -133,11 +133,11 @@ const services = [
 			'Летняя кухня с мангалами для самостоятельного приготовления, а также возможность самостоятелной стирки во время проживания.',
 		icon: <Home className="w-8 h-8" />,
 		gradient: 'from-slate-400 to-slate-600',
-		image: '/image/baza3.jpg',
+		image: '/image/Услуги/Услуги1.jpg',
 		perks: ['Фото летней кухни', 'Мангал для гостей'],
 		perkImages: {
-			'Фото летней кухни': '/image/summer-kitchen.png',
-			'Мангал для гостей': '/image/mangal.jpg',
+			'Фото летней кухни': '/image/Услуги/Услуги2.jpg',
+			'Мангал для гостей': '/image/Услуги/Услуги3.jpg',
 
 		},
 	},
@@ -149,7 +149,7 @@ const services = [
 			'Просторный зал с санузлом и кухонной зоной для самостоятельного приготовления. Подходит для мероприятий и банкетов, оснащён телевизором и звуковым сопровождением.',
 		icon: <Users className="w-8 h-8" />,
 		gradient: 'from-slate-500 to-indigo-600',
-		image: '/image/conference.jpg',
+		image: '/image/Конференц/Конференц1.jpg',
 		perks: [
 			'Фото конференц-зала',
 			'Санузел + кухонная зона',
@@ -157,10 +157,10 @@ const services = [
 			'Для мероприятий и банкетов',
 		],
 		perkImages: {
-			'Фото конференц-зала': '/image/2etaj4.jpg',
-			'Санузел + кухонная зона': '/image/2etaj.jpg',
-			'Телевизор и звук': '/image/2-etaj.jpg',
-			'Для мероприятий и банкетов': '/image/2etaj2.jpg',
+			'Фото конференц-зала': '/image/Конференц/Конференц2.jpg',
+			'Санузел + кухонная зона': '/image/Конференц/Конференц3.jpg',
+			'Телевизор и звук': '/image/Конференц/Конференц4.jpg',
+			'Для мероприятий и банкетов': '/image/Конференц/Конференц5.jpg',
 		},
 	},
 	{
@@ -171,10 +171,10 @@ const services = [
 			'Футбольные ворота, волейбольная площадка и детский комплекс прямо на территории. Подходит для активного отдыха детей и взрослых.',
 		icon: <TreePine className="w-8 h-8" />,
 		gradient: 'from-emerald-400 to-lime-500',
-		image: '/image/dom2.jpg',
+		image: '/image/Территория/Территория1.jpg',
 		perks: ['Фото территории', 'Футбольные ворота', 'Волейбольная площадка', 'Детский комплекс'],
 		perkImages: {
-			'Фото территории': '/image/IMG_20250720_180346.jpg',
+			'Фото территории': '/image/Территория/Территория2.jpg',
 
 		},
 	},
@@ -457,10 +457,15 @@ export default function ServicesCarousel() {
 												key={perkIdx}
 												type="button"
 												onClick={() => openGallery(service, service.perkImages?.[perk])}
-												className="flex items-center gap-2 px-3 py-2 rounded-xl bg-gradient-to-r from-amber-50/80 to-rose-50/80 border border-amber-200/40 text-sm text-gray-700 text-left hover:from-amber-100/80 hover:to-rose-100/80 transition-colors shadow-sm"
+												className="flex flex-col items-start gap-1 px-3 py-2 rounded-xl bg-gradient-to-r from-amber-50/80 to-rose-50/80 border border-amber-200/40 text-sm text-gray-700 text-left hover:from-amber-100/80 hover:to-rose-100/80 transition-colors shadow-sm"
 											>
-												<span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-primary to-secondary" />
-												{perk}
+												<span className="inline-flex rounded-md bg-white/90 border border-amber-200/60 px-2 py-0.5 text-[11px] italic uppercase tracking-wide text-amber-700 shadow-sm">
+													нажми для просмотра
+												</span>
+												<span className="flex items-center gap-2">
+													<span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-primary to-secondary" />
+													{perk}
+												</span>
 											</button>
 										))}
 									</div>

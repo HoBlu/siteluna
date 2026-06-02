@@ -7,103 +7,103 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 const galleryImages = [
   {
     id: 1,
-    src: '/image/gallery-1.jpg',
+    src: '/image/1.jpg',
 
   },
   {
     id: 2,
-    src: '/image/gallery-2.jpg',
+    src: '/image/2.jpg',
 
   },
   {
     id: 3,
-    src: '/image/gallery-3.jpg',
+    src: '/image/3.jpg',
 
   },
   {
     id: 4,
-    src: '/image/gallery-4.jpg',
+    src: '/image/4 .jpg',
 
   },
   {
     id: 5,
-    src: '/image/gallery-5.jpg',
+    src: '/image/5.jpg',
 
   },
   {
     id: 6,
-    src: '/image/gallery-6.jpg',
+    src: '/image/6.jpg',
 
   },
   {
     id: 7,
-    src: '/image/gallery-7.jpg',
+    src: '/image/7.jpg',
 
   },
   {
     id: 8,
-    src: '/image/1.jfif',
+    src: '/image/8.jpg',
 
   },
   {
     id: 9,
-    src: '/image/2.png',
+    src: '/image/9.jpg',
 
   },
   {
     id: 10,
-    src: '/image/3.jfif',
+    src: '/image/10.jpg',
 
   },
   {
     id: 11,
-    src: '/image/4.jfif',
+    src: '/image/11.jpg',
 
   },
   {
     id: 12,
-    src: '/image/5.jfif',
+    src: '/image/12.jpg',
 
   },
   {
     id: 13,
-    src: '/image/6.jfif',
+    src: '/image/13.jpg',
 
   },
   {
     id: 14,
-    src: '/image/7.jfif',
+    src: '/image/14.jpg',
 
   },
   {
     id: 15,
-    src: '/image/8.jfif',
+    src: '/image/15.jpg',
 
   },
   {
     id: 16,
-    src: '/image/9.jfif',
+    src: '/image/16.jpg',
 
   },
   {
     id: 17,
-    src: '/image/10.jfif',
+    src: '/image/17.jpg',
 
   },
   {
     id: 18,
-    src: '/image/11.jfif',
+    src: '/image/18.jpg',
 
   },
   {
     id: 19,
-    src: '/image/12.jfif',
+    src: '/image/19.jpg',
 
   },
 
   {
     id: 1222,
-    src: '/image/gallery-8.jpg',
+    src: '/image/20.jpg',
     
 
   }
