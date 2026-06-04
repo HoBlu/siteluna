@@ -14,6 +14,17 @@ module.exports = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        cream: '#F7F7F5',
+        forest: {
+          DEFAULT: '#2D4A3E',
+          light: '#3D6B58',
+          dark: '#1E3329',
+        },
+        sand: {
+          DEFAULT: '#C4A77D',
+          light: '#D4BC9A',
+          dark: '#A68B5B',
+        },
         primary: {
           DEFAULT: '#D97706', // amber-600
           hover: '#B45309', // amber-700
@@ -48,7 +59,10 @@ module.exports = {
       },
       backdropBlur: {
         xs: '2px',
-      }
+      },
+      borderRadius: {
+        '4xl': '2rem',
+      },
     },
   },
   plugins: [],

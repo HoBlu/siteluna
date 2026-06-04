@@ -289,29 +289,34 @@ export default function ServicesCarousel() {
 	};
 
 	return (
-		<section className="relative overflow-hidden py-16 px-4 sm:py-20 bg-gradient-to-br from-stone-450 via-white to-stone-50">
-			{/* Ambient glows */}
-			<motion.div
-				animate={{ y: [0, 24, 0] }}
-				transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
-				className="pointer-events-none absolute -top-32 -left-16 w-[28rem] h-[28rem] bg-amber-100/25 blur-3xl"
-			/>
-			<motion.div
-				animate={{ y: [0, -20, 0] }}
-				transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
-				className="pointer-events-none absolute bottom-0 right-0 w-[32rem] h-[32rem] bg-emerald-100/20 blur-3xl"
-			/>
+		<section className="relative overflow-hidden section-padding bg-white">
+			<div className="container-width relative z-10">
+				<motion.div
+					initial={{ opacity: 0, y: 30 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					transition={{ duration: 0.8 }}
+					className="text-center mb-12 md:mb-16"
+				>
+					<p className="text-forest text-sm font-medium tracking-[0.2em] uppercase mb-4">
+						Услуги
+					</p>
+					<h2 className="heading-section mb-5">Услуги и сервис</h2>
+					<p className="text-body max-w-2xl mx-auto">
+						Всё для комфортного отдыха на базе — от проживания до развлечений и мероприятий
+					</p>
+				</motion.div>
 
-			<div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-[0.82fr_1.18fr] gap-6 lg:gap-12 items-start">
+			<div className="grid lg:grid-cols-[0.82fr_1.18fr] gap-6 lg:gap-12 items-start">
 				{/* Mobile Navigation */}
 				<div className="lg:hidden w-full overflow-x-auto pb-2 -mt-4 flex gap-3 no-scrollbar snap-x px-1">
 					{services.map((service, idx) => (
 						<button
 							key={service.id}
 							onClick={() => goTo(idx)}
-							className={`flex-none snap-start whitespace-nowrap px-4 py-2.5 rounded-xl border text-sm font-semibold transition-all ${idx === currentIndex
-								? 'bg-primary text-white border-primary shadow-lg shadow-primary/25'
-								: 'bg-white/70 border-stone-200 text-stone-600 hover:bg-white'
+							className={`flex-none snap-start whitespace-nowrap px-4 py-2.5 rounded-full border text-sm font-medium transition-all ${idx === currentIndex
+								? 'bg-forest text-white border-forest shadow-lg shadow-forest/20'
+								: 'bg-white/70 border-black/10 text-foreground/60 hover:bg-white'
 								}`}
 						>
 							{service.title}
@@ -334,17 +339,17 @@ export default function ServicesCarousel() {
 							<button
 								key={service.id}
 								onClick={() => goTo(idx)}
-								className={`w-full text-left rounded-2xl border transition-all px-4 py-3 backdrop-blur-md ${idx === currentIndex
-									? 'bg-white/85 border-stone-200 shadow-xl shadow-stone-300/40'
-									: 'bg-white/65 border-stone-200/70 hover:bg-white/80 shadow-lg shadow-stone-200/30'
+								className={`w-full text-left rounded-3xl border transition-all px-4 py-3 backdrop-blur-md ${idx === currentIndex
+									? 'glass-card border-forest/15 shadow-lg'
+									: 'bg-white/50 border-black/5 hover:bg-white/70'
 									}`}
 							>
 								<div className="flex items-center justify-between gap-3">
 									<div className="flex items-center gap-3 text-base font-semibold">
 										<span
-											className={`inline-flex h-10 w-10 items-center justify-center rounded-xl ${idx === currentIndex
-												? 'bg-primary text-white shadow-lg shadow-primary/30'
-												: 'bg-white/70 text-stone-700'
+											className={`inline-flex h-10 w-10 items-center justify-center rounded-2xl ${idx === currentIndex
+												? 'bg-forest text-white shadow-lg shadow-forest/20'
+												: 'bg-forest/8 text-forest'
 												}`}
 										>
 											{service.icon}
@@ -362,8 +367,8 @@ export default function ServicesCarousel() {
 											<div
 												className={
 													idx === currentIndex
-														? 'text-primary text-base leading-snug'
-														: 'text-stone-600 text-base leading-snug'
+														? 'text-forest text-base leading-snug'
+														: 'text-foreground/50 text-base leading-snug'
 												}
 											>
 												{service.subtitle}
@@ -373,8 +378,8 @@ export default function ServicesCarousel() {
 									<div
 										className={
 											idx === currentIndex
-												? 'text-primary text-sm font-semibold'
-												: 'text-stone-700 text-sm font-semibold hover:text-stone-900'
+												? 'text-forest text-sm font-medium'
+												: 'text-foreground/40 text-sm font-medium hover:text-foreground/70'
 										}
 									>
 										Выбрать
@@ -393,7 +398,7 @@ export default function ServicesCarousel() {
 					className="relative w-full"
 				>
 					<div
-						className="relative overflow-hidden rounded-3xl sm:rounded-4xl bg-white/72 border border-stone-200/70 backdrop-blur-2xl shadow-2xl shadow-stone-300/30 ring-1 ring-black/5 min-h-[500px] sm:min-h-[900px]"
+						className="relative overflow-hidden rounded-4xl glass-card min-h-[500px] sm:min-h-[900px]"
 						onTouchStart={onTouchStart}
 						onTouchMove={onTouchMove}
 						onTouchEnd={onTouchEnd}
@@ -438,8 +443,8 @@ export default function ServicesCarousel() {
 								<div className="p-5 sm:p-8 md:p-10 space-y-5">
 									<div className="flex flex-wrap items-start justify-between gap-4">
 										<div className="space-y-1">
-											<h3 className="text-3xl font-semibold text-gray-900">{service.title}</h3>
-											<p className="text-primary font-medium">{service.subtitle}</p>
+											<h3 className="text-3xl font-semibold text-foreground tracking-tight">{service.title}</h3>
+											<p className="text-forest font-medium">{service.subtitle}</p>
 										</div>
 										{service.price && (
 											<div className="text-right">
@@ -449,7 +454,7 @@ export default function ServicesCarousel() {
 										)}
 									</div>
 
-									<p className="text-gray-700 leading-relaxed">{service.description}</p>
+									<p className="text-foreground/65 leading-relaxed">{service.description}</p>
 
 									<div className="grid sm:grid-cols-2 gap-2">
 										{service.perks?.map((perk, perkIdx) => (
@@ -457,13 +462,13 @@ export default function ServicesCarousel() {
 												key={perkIdx}
 												type="button"
 												onClick={() => openGallery(service, service.perkImages?.[perk])}
-												className="flex flex-col items-start gap-1 px-3 py-2 rounded-xl bg-gradient-to-r from-amber-50/80 to-rose-50/80 border border-amber-200/40 text-sm text-gray-700 text-left hover:from-amber-100/80 hover:to-rose-100/80 transition-colors shadow-sm"
+												className="flex flex-col items-start gap-1.5 px-3.5 py-2.5 rounded-2xl bg-forest/5 border border-forest/10 text-sm text-foreground/80 text-left hover:bg-forest/8 transition-colors"
 											>
-												<span className="inline-flex rounded-md bg-white/90 border border-amber-200/60 px-2 py-0.5 text-[11px] italic uppercase tracking-wide text-amber-700 shadow-sm">
+												<span className="inline-flex rounded-full bg-white/90 border border-forest/10 px-2.5 py-0.5 text-[10px] italic uppercase tracking-wide text-forest/70">
 													нажми для просмотра
 												</span>
 												<span className="flex items-center gap-2">
-													<span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-primary to-secondary" />
+													<span className="h-1.5 w-1.5 rounded-full bg-forest" />
 													{perk}
 												</span>
 											</button>
@@ -577,15 +582,15 @@ export default function ServicesCarousel() {
 					)}
 
 					{/* Controls for Main Carousel */}
-					<div className="mt-6 flex items-center justify-between gap-4 rounded-2xl bg-white/70 backdrop-blur-xl border border-stone-200/70 px-4 py-3 shadow-lg shadow-stone-200/40 ring-1 ring-black/5">
+					<div className="mt-6 flex items-center justify-between gap-4 rounded-3xl glass px-4 py-3">
 						<div className="flex items-center gap-2">
 							{services.map((_, idx) => (
 								<button
 									key={idx}
 									onClick={() => goTo(idx)}
-									className={`h-2.5 rounded-full transition-all ${idx === currentIndex
-										? 'w-10 bg-black shadow-md shadow-black/20'
-										: 'w-4 bg-black/25 hover:bg-black/35 shadow-sm shadow-black/10'
+									className={`h-2 rounded-full transition-all ${idx === currentIndex
+										? 'w-10 bg-forest'
+										: 'w-2 bg-forest/20 hover:bg-forest/35'
 										}`}
 									aria-label={`Показать ${idx + 1}-й слайд`}
 								/>
@@ -594,14 +599,14 @@ export default function ServicesCarousel() {
 						<div className="flex items-center gap-2">
 							<button
 								onClick={() => goTo(currentIndex - 1)}
-								className="px-3 py-2 rounded-xl bg-white/85 border border-stone-200 text-stone-900 hover:bg-white transition shadow-md shadow-stone-200/60"
+								className="px-3 py-2 rounded-full bg-white border border-black/10 text-foreground hover:bg-forest/5 transition"
 								aria-label="Предыдущий"
 							>
 								‹
 							</button>
 							<button
 								onClick={() => goTo(currentIndex + 1)}
-								className="px-3 py-2 rounded-xl bg-white/85 border border-stone-200 text-stone-900 hover:bg-white transition shadow-md shadow-stone-200/60"
+								className="px-3 py-2 rounded-full bg-white border border-black/10 text-foreground hover:bg-forest/5 transition"
 								aria-label="Следующий"
 							>
 								›
@@ -609,6 +614,7 @@ export default function ServicesCarousel() {
 						</div>
 					</div>
 				</motion.div>
+			</div>
 			</div>
 		</section>
 	);

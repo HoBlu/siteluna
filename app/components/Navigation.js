@@ -1,8 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone, MapPin, Clock, ExternalLink } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
@@ -10,169 +10,170 @@ import Image from 'next/image';
 const navItems = [
   { href: '/', label: 'Главная' },
   { href: '/gallery', label: 'Фотогалерея' },
-  { href: '/services', label: 'Услуги и сервис' },
   { href: '/faq', label: 'Частые вопросы' },
   { href: '/contacts', label: 'Контакты' },
-
 ];
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [currentTime, setCurrentTime] = useState('');
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const isHome = pathname === '/';
 
   useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const timeString = now.toLocaleTimeString('ru-RU', {
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZone: 'Asia/Barnaul'
-      });
-      const dateString = now.toLocaleDateString('ru-RU', {
-        weekday: 'short',
-        day: 'numeric',
-        month: 'long',
-        timeZone: 'Asia/Barnaul'
-      });
-      setCurrentTime(`${timeString}, ${dateString}`);
-    };
-
-    updateTime();
-    const timer = setInterval(updateTime, 60000); // Update every minute
-
-    return () => clearInterval(timer);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
+
+  const navSolid = scrolled || !isHome;
 
   return (
     <>
-      {/* Fixed Navigation */}
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="fixed top-0 left-0 right-0 z-50 glass border-b border-white/20"
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          navSolid
+            ? 'glass border-b border-black/5 py-0'
+            : 'bg-transparent border-b border-transparent py-1'
+        }`}
       >
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-3">
-              <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-3">
+        <div className="container-width">
+          <div className="flex items-center justify-between h-16 md:h-[4.5rem]">
+            <Link href="/" className="flex items-center gap-3 group">
+              <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3">
                 <Image
                   src="/image/logo.png"
-                  alt="логотип"
-                  width={64}
-                  height={64}
-                  className="object-contain"
+                  alt="Луна №50"
+                  width={44}
+                  height={44}
+                  className={`object-contain transition-all ${navSolid ? '' : 'brightness-0 invert'}`}
                 />
-                <div className="text-2xl font-bold text-primary">
-                  -
-                </div>
+                <span
+                  className={`text-lg font-semibold tracking-tight transition-colors ${
+                    navSolid ? 'text-foreground' : 'text-white'
+                  }`}
+                >
+                  Луна №50
+                </span>
               </motion.div>
             </Link>
 
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center gap-1">
               {navItems.map((item) => (
                 <Link key={item.href} href={item.href}>
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    className={`px-3 py-2 rounded-lg transition-all duration-300 font-medium ${pathname === item.href
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-gray-700 hover:text-primary hover:bg-primary/5'
-                      }`}
+                  <span
+                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                      pathname === item.href
+                        ? navSolid
+                          ? 'bg-forest/10 text-forest'
+                          : 'bg-white/20 text-white backdrop-blur-sm'
+                        : navSolid
+                          ? 'text-foreground/70 hover:text-foreground hover:bg-black/5'
+                          : 'text-white/80 hover:text-white hover:bg-white/10'
+                    }`}
                   >
                     {item.label}
-                  </motion.div>
+                  </span>
                 </Link>
               ))}
             </div>
 
-            {/* Desktop Contact Info */}
-            <div className="hidden md:flex items-center space-x-4">
-              <div className="flex items-center gap-2 text-sm text-gray-700">
-                <Phone className="w-4 h-4 text-primary" />
-                <span>+7 (962) 807-50-50</span>
-              </div>
+            <div className="hidden md:flex items-center gap-3">
+              <a
+                href="tel:+79628075050"
+                className={`hidden xl:flex items-center gap-2 text-sm font-medium transition-colors ${
+                  navSolid ? 'text-foreground/70 hover:text-foreground' : 'text-white/90 hover:text-white'
+                }`}
+              >
+                <Phone className="w-4 h-4" />
+                +7 (962) 807-50-50
+              </a>
+              <Link
+                href="/contacts"
+                className={`btn text-sm !py-2.5 !px-5 ${
+                  navSolid ? 'bg-forest text-white hover:bg-forest-dark shadow-lg shadow-forest/20' : 'bg-white text-forest hover:bg-white/90'
+                }`}
+              >
+                Забронировать
+              </Link>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 rounded-lg glass hover:bg-white/20 transition-colors text-gray-800"
+              className={`lg:hidden p-2.5 rounded-full transition-colors ${
+                navSolid
+                  ? 'text-foreground hover:bg-black/5'
+                  : 'text-white hover:bg-white/10'
+              }`}
+              aria-label="Меню"
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
+      </motion.nav>
 
-        {/* Expandable Menu (Desktop & Mobile) */}
+      <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={false}
-            animate={{ height: isOpen ? 'auto' : 0 }}
-            className="overflow-hidden glass border-t border-white/20"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-40 lg:hidden"
           >
-            <div className="px-4 py-4 space-y-2">
-              {navItems.map((item) => (
-                <Link key={item.href} href={item.href} onClick={() => setIsOpen(false)}>
-                  <motion.div
-                    whileHover={{ x: 10 }}
-                    className={`block px-4 py-3 rounded-lg transition-all duration-300 font-medium ${pathname === item.href
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-gray-700 hover:text-primary hover:bg-primary/5'
-                      }`}
-                  >
-                    {item.label}
-                  </motion.div>
-                </Link>
-              ))}
-              <div className="pt-4 border-t border-white/20">
-                {/* Widgets */}
-                <div className="grid grid-cols-1 gap-3 mb-4">
-                  {/* Time Widget */}
-                  <div className="glass p-3 rounded-xl border border-white/20">
-                    <div className="flex items-center gap-2 text-gray-700 mb-1">
-                      <Clock className="w-4 h-4 text-primary" />
-                      <span className="text-sm font-semibold">Местное время</span>
-                    </div>
-                    <p className="text-black font-medium text-sm">
-                      {currentTime || 'Загрузка...'}
-                    </p>
-                  </div>
-
-                  {/* Location Widget */}
-                  <div className="glass p-3 rounded-xl border border-white/20">
-                    <div className="flex items-center gap-2 text-gray-600 mb-1">
-                      <MapPin className="w-4 h-4 text-primary" />
-                      <span className="text-sm font-semibold">Расположение</span>
-                    </div>
-                    <p className="text-black font-medium text-sm mb-2">
-                      Село Ая, ул. Советская 50
-                    </p>
-                    <motion.a
-                      href="https://yandex.ru/maps/11235/altai-krai/house/sovetskaya_ulitsa_50/bEwYfgZkSEYAQFtrfXV1dHxkYg==/?ll=85.815381%2C51.944491&z=16.6"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="inline-flex items-center gap-2 bg-primary/10 text-primary px-3 py-2 rounded-lg text-xs font-medium hover:bg-primary/20 transition-colors"
+            <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 28, stiffness: 280 }}
+              className="absolute right-0 top-0 bottom-0 w-[min(100%,320px)] bg-cream shadow-2xl flex flex-col"
+            >
+              <div className="p-6 pt-20 flex-1 overflow-y-auto">
+                <nav className="space-y-1">
+                  {navItems.map((item, i) => (
+                    <motion.div
+                      key={item.href}
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05 }}
                     >
-                      <ExternalLink className="w-3 h-3" />
-                      Показать на карте
-                    </motion.a>
-                  </div>
-                </div>
+                      <Link
+                        href={item.href}
+                        className={`block px-4 py-3.5 rounded-2xl text-base font-medium transition-colors ${
+                          pathname === item.href
+                            ? 'bg-forest/10 text-forest'
+                            : 'text-foreground/80 hover:bg-black/5'
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
+                  ))}
+                </nav>
 
-                <div className="flex items-center gap-2 text-sm text-slate-600 mb-3">
-                  <Phone className="w-4 h-4 text-primary" />
-                  <span>+7 (962) 807-50-50</span>
+                <div className="mt-8 pt-8 border-t border-black/10 space-y-4">
+                  <a href="tel:+79628075050" className="flex items-center gap-3 text-foreground/80">
+                    <Phone className="w-5 h-5 text-forest" />
+                    <span className="font-medium">+7 (962) 807-50-50</span>
+                  </a>
+                  <Link href="/contacts" className="btn w-full bg-forest text-white hover:bg-forest-dark shadow-lg shadow-forest/20">
+                    Забронировать домик
+                  </Link>
                 </div>
-
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         )}
-      </motion.nav>
+      </AnimatePresence>
     </>
   );
 }

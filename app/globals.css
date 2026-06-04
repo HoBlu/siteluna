@@ -89,4 +89,21 @@
     .text-gradient {
         @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
     }
+
+    .heading-section {
+        @apply text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-foreground;
+    }
+
+    .text-body {
+        @apply text-base md:text-lg text-gray-600 leading-relaxed;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
 }
