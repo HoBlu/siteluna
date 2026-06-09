@@ -16,7 +16,7 @@ export const gallerySections = [
     id: 'territory',
     title: 'Территория',
     description: 'Общие фото базы и окружения',
-    images: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map(image),
+    images: [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.10, 1.11, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17].map(image),
   },
   {
     id: 'houses',
@@ -25,15 +25,15 @@ export const gallerySections = [
     subsections: [
       {
         title: 'Снаружи',
-        images: [19, 20, 21, 22, 23, 24, 25].map(image),
+        images: [1.3, 1.2, 2.1, 2.2, 2.3, 2.4].map(image),
       },
       {
         title: 'Внутри',
-        images: [26, 27, 28, 29, 30, 31].map(image),
+        images: [3, 3.1, 3.2, 3.4, 3.5, 3.6, 3.7].map(image),
       },
       {
         title: 'Номер',
-        images: [32, 33, 34, 35, 36, 37, 38, 39, 40, 41].map(image),
+        images: [4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7].map(image),
       },
     ],
   },
@@ -41,19 +41,19 @@ export const gallerySections = [
     id: 'gazebo',
     title: 'Беседка',
     description: 'Кухня и зона отдыха',
-    images: [42, 43].map(image),
+    images: [5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9].map(image),
   },
   {
     id: 'bbq',
-    title: 'Мангальная зона',
+    title: 'Бания и барбекю',
     description: 'Место для барбекю и отдыха на свежем воздухе',
-    images: [44, 45].map(image),
+    images: [6, 6.1].map(image),
   },
   {
     id: 'pool',
     title: 'Бассейн',
     description: 'Бассейн с подогревом',
-    images: [46, 47, 48].map(image).concat([video(49, '/image/49.MOV')]),
+    images: [7, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8].map(image).concat([video(49, '/image/49.MOV')]),
   },
 ];
 
