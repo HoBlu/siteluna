@@ -7,106 +7,64 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 const galleryImages = [
   {
     id: 1,
-    src: '/image/1.jpg',
+    src: '/image/1.1.jpg',
 
   },
   {
     id: 2,
-    src: '/image/2.jpg',
+    src: '/image/1.3.jpg',
 
   },
   {
     id: 3,
-    src: '/image/3.jpg',
+    src: '/image/1.6.jpg',
 
   },
   {
     id: 4,
-    src: '/image/4 .jpg',
+    src: '/image/1.10.jpg',
 
   },
   {
     id: 5,
-    src: '/image/5.jpg',
+    src: '/image/7.8.jpg',
 
   },
   {
     id: 6,
-    src: '/image/6.jpg',
+    src: '/image/7.3.jpg',
 
   },
   {
     id: 7,
-    src: '/image/7.jpg',
+    src: '/image/2.1.jpg',
 
   },
   {
     id: 8,
-    src: '/image/8.jpg',
+    src: '/image/5.jpg',
 
   },
   {
     id: 9,
-    src: '/image/9.jpg',
+    src: '/image/1.14.jpg',
 
   },
   {
     id: 10,
-    src: '/image/10.jpg',
+    src: '/image/7.2.jpg',
 
   },
   {
     id: 11,
-    src: '/image/11.jpg',
+    src: '/image/1.jpg',
 
   },
   {
     id: 12,
-    src: '/image/12.jpg',
+    src: '/image/6.1.jpg',
 
   },
-  {
-    id: 13,
-    src: '/image/13.jpg',
-
-  },
-  {
-    id: 14,
-    src: '/image/14.jpg',
-
-  },
-  {
-    id: 15,
-    src: '/image/15.jpg',
-
-  },
-  {
-    id: 16,
-    src: '/image/16.jpg',
-
-  },
-  {
-    id: 17,
-    src: '/image/17.jpg',
-
-  },
-  {
-    id: 18,
-    src: '/image/18.jpg',
-
-  },
-  {
-    id: 19,
-    src: '/image/19.jpg',
-
-  },
-
-  {
-    id: 1222,
-    src: '/image/20.jpg',
-    
-
-  }
 ];
 
 export default function PhotoGallery() {
