@@ -65,6 +65,12 @@ const galleryImages = [
     src: '/image/6.1.jpg',
 
   },
+  {
+    id: 13,
+    src: '/image/123.jpg',
+    alt: 'Фотография базы отдыха Луна №50',
+    title: 'Новая фотография',
+  },
 ];
 
 export default function PhotoGallery() {
