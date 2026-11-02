@@ -26,7 +26,7 @@ const services = [
 		],
 		perkImages: {
 			'Размер комнаты: 20 кв.м': '/image/Проживание/проживание1.jpg',
-			'Кондиционер и телевизор': '/image/Проживание/проживание2.jpg',
+			'Кондиционер и телевизор': '/image/Проживание/Проживание2.jpg',
 			'Двуспальная и двухъярусная кровати': '/image/Проживание/проживание3.jpg',
 			'Санузел с тёплым полом': '/image/Проживание/проживание4.jpg',
 			'Отопление круглый год': '/image/Проживание/проживание5.jpg',
@@ -45,7 +45,7 @@ const services = [
 		perks: ['Фото кухни (1 этаж)', 'Фото беседки', 'Завтрак, обед, ужин по заказу'],
 		perkImages: {
 			'Фото кухни (1 этаж)': '/image/питание/питание1.jpg',
-			'Фото беседки': '/image/питание/Питание2.jpg',
+			'Фото беседки': '/image/питание/питание2.jpg',
 		},
 	},
 	{
@@ -289,7 +289,7 @@ export default function ServicesCarousel() {
 	};
 
 	return (
-		<section className="relative overflow-hidden section-padding bg-white">
+		<section id="services" className="relative overflow-hidden section-padding bg-white scroll-mt-24">
 			<div className="container-width relative z-10">
 				<motion.div
 					initial={{ opacity: 0, y: 30 }}

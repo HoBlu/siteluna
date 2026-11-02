@@ -71,7 +71,7 @@ export default function FeaturesSection() {
 					transition={{ duration: 0.8 }}
 					className="text-center mb-16"
 				>
-					<h2 className="text-4xl md:text-5xl font-bold mb-6 text-amber-700">
+					<h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
 						Особенности
 					</h2>
 					<p className="text-lg text-gray-600 max-w-3xl mx-auto">

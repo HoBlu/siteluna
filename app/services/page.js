@@ -9,14 +9,14 @@ const accommodationTypes = [
     id: 1,
     title: "НОМЕРА В БОЛЬШОМ ДОМЕ",
     description: "3 просторных номера на первом этаже. Каждый номер рассчитан на комфортное размещение до 4 человек. Перед каждым номером — индивидуальная терраса со столиком.",
-    image: "/image/family-suite.jpg",
+    image: "/image/2.3.jpg",
     gradient: "from-blue-400 to-purple-500"
   },
   {
     id: 2,
     title: "ОТДЕЛЬНЫЕ ДОМИКИ",
     description: "Уютные Гостевые дома с террасой и всеми удобствами номеров основного здания. Идеальный выбор для тех, кто ценит уединение и приватность.",
-    image: "/image/guest-house.jpg",
+    image: "/image/1.3.jpg",
     gradient: "from-green-400 to-emerald-500"
   }
 ];
@@ -65,7 +65,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-olive-600 bg-clip-text text-transparent">
               УСЛУГИ И СЕРВИС
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -140,7 +140,7 @@ export default function ServicesPage() {
                   transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
                   className="flex items-center gap-3 p-4 rounded-xl neumorphism hover:shadow-lg transition-all duration-300"
                 >
-                  <div className="p-2 rounded-lg bg-gradient-to-r from-purple-400 to-pink-500 text-white">
+                  <div className="p-2 rounded-lg bg-olive-600 text-white">
                     {amenity.icon}
                   </div>
                   <span className="text-gray-700 font-medium">{amenity.text}</span>

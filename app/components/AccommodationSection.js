@@ -13,7 +13,7 @@ const accommodations = [
     type: "ГОСТЕВОЙ ДОМ",
     title: "Гостевой Дом",
     description: "Гостевой дом с отделкой из кедра, представляет собой гармоничное сочетание комфорта и природы.",
-    image: "/image/guest-house.jpg",
+    image: "/image/1.3.jpg",
     link: "/accommodation/guest-house",
     amenities: [
       { icon: <Bed className="w-4 h-4" />, text: "Двуспальная кровать" },
@@ -32,7 +32,7 @@ const accommodations = [
     type: "СЕМЕЙНЫЙ ЛЮКС У БАССЕЙНА",
     title: "Семейный номер",
     description: "Просторный дом с современными удобствами для семей и дружных компаний.",
-    image: "/image/family-suite.jpg",
+    image: "/image/2.3.jpg",
     link: "/accommodation/family-suite",
     amenities: [
       { icon: <Bed className="w-4 h-4" />, text: "Двуспальная кровать" },
@@ -322,7 +322,7 @@ export default function AccommodationSection() {
                   <button
                     onClick={() => setCurrentSlide(index)}
                     className={`w-2 h-2 rounded-full transition-all duration-300 ${index === currentSlide
-                      ? 'bg-gradient-to-r from-purple-500 to-pink-500 w-8'
+                      ? 'bg-olive-600 w-8'
                       : 'bg-gray-300'
                       }`}
                   />

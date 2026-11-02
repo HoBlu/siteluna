@@ -134,7 +134,7 @@ export default function FAQPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-olive-600 bg-clip-text text-transparent">
               Частые вопросы
             </h1>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -179,14 +179,14 @@ export default function FAQPage() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-green-400 to-green-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg"
+                  className="bg-olive-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg"
                 >
                   Позвонить: +7 (962) 807-50-50
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-purple-400 to-pink-500 text-white px-8 py-3 rounded-full font-semibold shadow-lg"
+                  className="bg-olive-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg"
                 >
                   Написать на почту
                 </motion.button>
