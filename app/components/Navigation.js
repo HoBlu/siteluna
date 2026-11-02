@@ -1,179 +1,136 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
+import { Menu, X, Phone } from 'lucide-react';
+import LogoMark from './LogoMark';
 
-const navItems = [
-  { href: '/', label: 'Главная' },
-  { href: '/gallery', label: 'Фотогалерея' },
-  { href: '/faq', label: 'Частые вопросы' },
-  { href: '/contacts', label: 'Контакты' },
+const columns = [
+  {
+    title: 'База',
+    items: [
+      { href: '/', label: 'Главная' },
+      { href: '/services', label: 'Услуги и проживание' },
+      { href: '/gallery', label: 'Фотогалерея' },
+    ],
+  },
+  {
+    title: 'На территории',
+    items: [
+      { href: '/#services', label: 'Бассейн с подогревом' },
+      { href: '/#services', label: 'Русская баня' },
+      { href: '/#services', label: 'Питание и беседки' },
+      { href: '/#services', label: 'Развлечения рядом' },
+    ],
+  },
+  {
+    title: 'Гостям',
+    items: [
+      { href: '/faq', label: 'Частые вопросы' },
+      { href: '/contacts', label: 'Как добраться' },
+      { href: '/contacts', label: 'Контакты' },
+    ],
+  },
 ];
 
 export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === '/';
+  const onHero = pathname === '/' && !scrolled;
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+  useEffect(() => setOpen(false), [pathname]);
 
-  const navSolid = scrolled || !isHome;
+  useEffect(() => {
+    document.body.style.overflow = open ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [open]);
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          navSolid
-            ? 'glass border-b border-black/5 py-0'
-            : 'bg-transparent border-b border-transparent py-1'
-        }`}
-      >
-        <div className="container-width">
-          <div className="flex items-center justify-between h-16 md:h-[4.5rem]">
-            <Link href="/" className="flex items-center gap-3 group">
-              <motion.div whileHover={{ scale: 1.03 }} className="flex items-center gap-3">
-                <Image
-                  src="/image/logo.png"
-                  alt="Луна №50"
-                  width={44}
-                  height={44}
-                  className={`object-contain transition-all ${navSolid ? '' : 'brightness-0 invert'}`}
-                />
-                <span
-                  className={`text-lg font-semibold tracking-tight transition-colors ${
-                    navSolid ? 'text-foreground' : 'text-white'
-                  }`}
-                >
-                  Луна №50
-                </span>
-              </motion.div>
+      {/* Плавающая панель */}
+      <header className="fixed top-3 sm:top-4 inset-x-3 sm:inset-x-8 z-40">
+        <div
+          className={`grid grid-cols-[1fr_auto_1fr] items-center h-14 px-3 sm:px-5 rounded-xl border text-white transition-colors duration-500 backdrop-blur-md ${
+            onHero ? 'bg-black/35 border-white/10' : 'bg-[#2A2A28]/95 border-black/10 shadow-lg shadow-black/10'
+          }`}
+        >
+          <Link href="/" className="flex items-center gap-2.5 justify-self-start">
+            <LogoMark className="w-8 h-8 text-white" title="Луна №50" />
+            <span className="hidden sm:block text-[13px] tracking-[0.32em] uppercase font-light">Луна №50</span>
+          </Link>
+
+          <button
+            onClick={() => setOpen(true)}
+            className="flex items-center gap-2 text-[13px] uppercase tracking-[0.12em] font-medium hover:opacity-80"
+            aria-label="Открыть меню"
+          >
+            <Menu className="w-4 h-4" /> Меню
+          </button>
+
+          <div className="flex items-center gap-4 justify-self-end">
+            <a href="tel:+79628075050" className="hidden md:block text-[14px] font-medium">+7 (962) 807-50-50</a>
+            <a href="tel:+79628075050" className="md:hidden" aria-label="Позвонить"><Phone className="w-5 h-5" /></a>
+            <Link href="/contacts" className="hidden sm:block rounded-[10px] bg-olive-600 hover:bg-olive-700 px-4 py-2.5 text-[13px] font-medium transition-colors">
+              Забронировать
             </Link>
-
-            <div className="hidden lg:flex items-center gap-1">
-              {navItems.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  <span
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                      pathname === item.href
-                        ? navSolid
-                          ? 'bg-forest/10 text-forest'
-                          : 'bg-white/20 text-white backdrop-blur-sm'
-                        : navSolid
-                          ? 'text-foreground/70 hover:text-foreground hover:bg-black/5'
-                          : 'text-white/80 hover:text-white hover:bg-white/10'
-                    }`}
-                  >
-                    {item.label}
-                  </span>
-                </Link>
-              ))}
-            </div>
-
-            <div className="hidden md:flex items-center gap-3">
-              <a
-                href="tel:+79628075050"
-                className={`hidden xl:flex items-center gap-2 text-sm font-medium transition-colors ${
-                  navSolid ? 'text-foreground/70 hover:text-foreground' : 'text-white/90 hover:text-white'
-                }`}
-              >
-                <Phone className="w-4 h-4" />
-                +7 (962) 807-50-50
-              </a>
-              <Link
-                href="/contacts"
-                className={`btn text-sm !py-2.5 !px-5 ${
-                  navSolid ? 'bg-forest text-white hover:bg-forest-dark shadow-lg shadow-forest/20' : 'bg-white text-forest hover:bg-white/90'
-                }`}
-              >
-                Забронировать
-              </Link>
-            </div>
-
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className={`lg:hidden p-2.5 rounded-full transition-colors ${
-                navSolid
-                  ? 'text-foreground hover:bg-black/5'
-                  : 'text-white hover:bg-white/10'
-              }`}
-              aria-label="Меню"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </div>
         </div>
-      </motion.nav>
+      </header>
 
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-40 lg:hidden"
-          >
-            <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" onClick={() => setIsOpen(false)} />
-            <motion.div
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ type: 'spring', damping: 28, stiffness: 280 }}
-              className="absolute right-0 top-0 bottom-0 w-[min(100%,320px)] bg-cream shadow-2xl flex flex-col"
-            >
-              <div className="p-6 pt-20 flex-1 overflow-y-auto">
-                <nav className="space-y-1">
-                  {navItems.map((item, i) => (
-                    <motion.div
-                      key={item.href}
-                      initial={{ opacity: 0, x: 20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: i * 0.05 }}
-                    >
+      {/* Раскрытое меню */}
+      <div className={`fixed inset-0 z-50 transition-opacity duration-500 ${open ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={() => setOpen(false)} />
+        <div
+          className={`absolute top-3 sm:top-4 inset-x-3 sm:inset-x-8 max-h-[calc(100svh-24px)] overflow-y-auto rounded-2xl bg-[#F3F1EC] text-[#2A2A28] p-6 sm:p-10 transition-transform duration-500 ${
+            open ? 'translate-y-0' : '-translate-y-6'
+          }`}
+        >
+          <div className="flex items-center justify-between">
+            <span className="flex items-center gap-2.5 text-[13px] tracking-[0.32em] uppercase"><LogoMark className="w-7 h-7 text-olive-700" /> Луна №50</span>
+            <button onClick={() => setOpen(false)} className="flex items-center gap-2 text-[13px] uppercase tracking-[0.12em]">
+              <X className="w-4 h-4" /> Закрыть
+            </button>
+          </div>
+
+          <div className="mt-10 grid sm:grid-cols-3 gap-10">
+            {columns.map((col) => (
+              <div key={col.title}>
+                <p className="text-[12px] uppercase tracking-[0.18em] text-warm-500">{col.title}</p>
+                <ul className="mt-4 grid gap-2.5">
+                  {col.items.map((it) => (
+                    <li key={it.label}>
                       <Link
-                        href={item.href}
-                        className={`block px-4 py-3.5 rounded-2xl text-base font-medium transition-colors ${
-                          pathname === item.href
-                            ? 'bg-forest/10 text-forest'
-                            : 'text-foreground/80 hover:bg-black/5'
-                        }`}
+                        href={it.href}
+                        onClick={() => setOpen(false)}
+                        className={`text-2xl font-light tracking-[-0.02em] transition-opacity hover:opacity-60 ${pathname === it.href ? 'text-olive-600' : ''}`}
                       >
-                        {item.label}
+                        {it.label}
                       </Link>
-                    </motion.div>
+                    </li>
                   ))}
-                </nav>
-
-                <div className="mt-8 pt-8 border-t border-black/10 space-y-4">
-                  <a href="tel:+79628075050" className="flex items-center gap-3 text-foreground/80">
-                    <Phone className="w-5 h-5 text-forest" />
-                    <span className="font-medium">+7 (962) 807-50-50</span>
-                  </a>
-                  <Link href="/contacts" className="btn w-full bg-forest text-white hover:bg-forest-dark shadow-lg shadow-forest/20">
-                    Забронировать домик
-                  </Link>
-                </div>
+                </ul>
               </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+          </div>
+
+          <div className="mt-10 pt-6 border-t border-black/10 flex flex-wrap items-center gap-x-8 gap-y-3 text-[14px]">
+            <a href="tel:+79628075050" className="font-medium">+7 (962) 807-50-50</a>
+            <span className="text-warm-500">село Ая, ул. Советская, 50</span>
+            <Link href="/contacts" onClick={() => setOpen(false)} className="sm:ml-auto rounded-[10px] bg-olive-600 hover:bg-olive-700 px-5 py-3 text-white font-medium">
+              Забронировать
+            </Link>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

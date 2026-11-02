@@ -22,10 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ru">
-      <body
-        className={`${franksRus.variable} antialiased`}
-        style={{ fontFamily: 'FranksRus, sans-serif' }}
-      >
+      <body className={`${franksRus.variable} antialiased`}>
         {children}
       </body>
     </html>
